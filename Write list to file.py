@@ -1,9 +1,3 @@
-#A Program for quickly determening if an item is needed to be found in raid for a quest.
-
-#importing the GUI library
-from tkinter import *
-
-#Creating the list of loot items
 loot = ["Paracord", "Corrugated Hose", "Malboro cigarettes", "Wilston cigarettes", "Strike cigarettes", "Horse figurine", "Cat figurine", "Bronze Lion", 
         "Gas analyzer", "Military COFDM wireless signal transmitter", "Uhf RFID reader", "VPX flash storage module", "Virtex programmable processor", 
         "Capacitors", "Wires", "Wd-40 100ml", "Car battery", "Spark plug", "Broken gphone", "CPU fan", "PC CPU", "Printed circuit board", "Graphics card", 
@@ -13,22 +7,11 @@ loot = ["Paracord", "Corrugated Hose", "Malboro cigarettes", "Wilston cigarettes
         "6-sten-140-m military battery", "Ofz 30x160mm shell", "KEKtape duct tape", "Raven figurine", "Ripstop cloth", "Aramid fiber cloth", "Fleece cloth", 
         "Polyamide fabric Cordura", "Can of dr. lupo's coffee beans", "Veritas guitar pick" ]
 
+items_file = open("Items.txt", "a")
 x=0
-root = Tk()
-root.title('List of Items That Need Found in Raid Status')
 
-# Creating a Frame for the listed items
-mainFrame = LabelFrame(root)
-mainFrame.grid(row=0, column=0, columnspan=2, padx = 5, pady = 5)
+while x < len(loot):
+    items_file.write(loot[x] + "\n")
+    x += 1
 
-# Creating a Label Widget, text basically
-while x<len(loot)-1:
-    evenList = Label(mainFrame, text=loot[x])
-    evenList.grid(row=x, column=0)
-    x=x+1
-    oddList = Label(mainFrame, text=loot[x])
-    oddList.grid(row=x-1, column=1)
-    x=x+1
-
-#Creating the main loop
-root.mainloop()
+items_file.close()
