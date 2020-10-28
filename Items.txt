@@ -1,55 +1,55 @@
-Paracord
-Corrugated Hose
-Malboro cigarettes
-Wilston cigarettes
-Strike cigarettes
-Horse figurine
-Cat figurine
-Bronze Lion
-Gas analyzer
-Military COFDM wireless signal transmitter
-Uhf RFID reader
-VPX flash storage module
-Virtex programmable processor
-Capacitors
-Wires
-Wd-40 100ml
-Car battery
-Spark plug
-Broken gphone
-CPU fan
-PC CPU
-Printed circuit board
-Graphics card
-Powercord
-T-Shaped plug
-Antique vase
-Antique teapot
-Silver badge
-Clin wiper
-Portable defibrillator
-Medical bloodset
-Ox bleach
-5l propane tank
-Fuel Conditioner
-Heat-exchange alkali surface washer
-Rechargeable battery
-Secure flash drive
-42nd signature blend english tea
-Golden rooster
-Roler submariner gold wrist watch
-Battered antique book
-Fireklean gun lube
-Old firesteel
-Deadlyslob's beard oil
-Golden 1gphone
-6-sten-140-m military battery
-Ofz 30x160mm shell
-KEKtape duct tape
-Raven figurine
-Ripstop cloth
-Aramid fiber cloth
-Fleece cloth
-Polyamide fabric Cordura
-Can of dr. lupo's coffee beans
-Veritas guitar pick
+
+Paracordbutton = Button(mainFrame, text="Paracord", width=35, padx=5, command=lambda:newwindow(Paracord))
+Corrugated_Hosebutton = Button(mainFrame, text="Corrugated Hose", width=35, padx=5, command=lambda:newwindow(Corrugated_Hose))
+Malboro_cigarettesbutton = Button(mainFrame, text="Malboro cigarettes", width=35, padx=5, command=lambda:newwindow(Malboro_cigarettes))
+Wilston_cigarettesbutton = Button(mainFrame, text="Wilston cigarettes", width=35, padx=5, command=lambda:newwindow(Wilston_cigarettes))
+Strike_cigarettesbutton = Button(mainFrame, text="Strike cigarettes", width=35, padx=5, command=lambda:newwindow(Strike_cigarettes))
+Horse_figurinebutton = Button(mainFrame, text="Horse figurine", width=35, padx=5, command=lambda:newwindow(Horse_figurine))
+Cat_figurinebutton = Button(mainFrame, text="Cat figurine", width=35, padx=5, command=lambda:newwindow(Cat_figurine))
+Bronze_Lionbutton = Button(mainFrame, text="Bronze Lion", width=35, padx=5, command=lambda:newwindow(Bronze_Lion))
+Gas_analyzerbutton = Button(mainFrame, text="Gas analyzer", width=35, padx=5, command=lambda:newwindow(Gas_analyzer))
+Military_COFDM_wireless_signal_transmitterbutton = Button(mainFrame, text="Military COFDM wireless signal transmitter", width=35, padx=5, command=lambda:newwindow(Military_COFDM_wireless_signal_transmitter))
+Uhf_RFID_readerbutton = Button(mainFrame, text="Uhf RFID reader", width=35, padx=5, command=lambda:newwindow(Uhf_RFID_reader))
+VPX_flash_storage_modulebutton = Button(mainFrame, text="VPX flash storage module", width=35, padx=5, command=lambda:newwindow(VPX_flash_storage_module))
+Virtex_programmable_processorbutton = Button(mainFrame, text="Virtex programmable processor", width=35, padx=5, command=lambda:newwindow(Virtex_programmable_processor))
+Capacitorsbutton = Button(mainFrame, text="Capacitors", width=35, padx=5, command=lambda:newwindow(Capacitors))
+Wiresbutton = Button(mainFrame, text="Wires", width=35, padx=5, command=lambda:newwindow(Wires))
+Wd40_100mlbutton = Button(mainFrame, text="Wd-40 100ml", width=35, padx=5, command=lambda:newwindow(Wd40_100ml))
+Car_batterybutton = Button(mainFrame, text="Car battery", width=35, padx=5, command=lambda:newwindow(Car_battery))
+Spark_plugbutton = Button(mainFrame, text="Spark plug", width=35, padx=5, command=lambda:newwindow(Spark_plug))
+Broken_gphonebutton = Button(mainFrame, text="Broken gphone", width=35, padx=5, command=lambda:newwindow(Broken_gphone))
+CPU_fanbutton = Button(mainFrame, text="CPU fan", width=35, padx=5, command=lambda:newwindow(CPU_fan))
+PC_CPUbutton = Button(mainFrame, text="PC CPU", width=35, padx=5, command=lambda:newwindow(PC_CPU))
+Printed_circuit_boardbutton = Button(mainFrame, text="Printed circuit board", width=35, padx=5, command=lambda:newwindow(Printed_circuit_board))
+Graphics_cardbutton = Button(mainFrame, text="Graphics card", width=35, padx=5, command=lambda:newwindow(Graphics_card))
+Powercordbutton = Button(mainFrame, text="Powercord", width=35, padx=5, command=lambda:newwindow(Powercord))
+TShaped_plugbutton = Button(mainFrame, text="T-Shaped plug", width=35, padx=5, command=lambda:newwindow(TShaped_plug))
+Antique_vasebutton = Button(mainFrame, text="Antique vase", width=35, padx=5, command=lambda:newwindow(Antique_vase))
+Antique_teapotbutton = Button(mainFrame, text="Antique teapot", width=35, padx=5, command=lambda:newwindow(Antique_teapot))
+Silver_badgebutton = Button(mainFrame, text="Silver badge", width=35, padx=5, command=lambda:newwindow(Silver_badge))
+Clin_wiperbutton = Button(mainFrame, text="Clin wiper", width=35, padx=5, command=lambda:newwindow(Clin_wiper))
+Portable_defibrillatorbutton = Button(mainFrame, text="Portable defibrillator", width=35, padx=5, command=lambda:newwindow(Portable_defibrillator))
+Medical_bloodsetbutton = Button(mainFrame, text="Medical bloodset", width=35, padx=5, command=lambda:newwindow(Medical_bloodset))
+Ox_bleachbutton = Button(mainFrame, text="Ox bleach", width=35, padx=5, command=lambda:newwindow(Ox_bleach))
+Fivel_propane_tankbutton = Button(mainFrame, text="5l propane tank", width=35, padx=5, command=lambda:newwindow(Fivel_propane_tank))
+Fuel_Conditionerbutton = Button(mainFrame, text="Fuel Conditioner", width=35, padx=5, command=lambda:newwindow(Fuel_Conditioner))
+Heat_exchange_alkali_surface_washerbutton = Button(mainFrame, text="Heat-exchange alkali surface washer", width=35, padx=5, command=lambda:newwindow(Heat_exchange_alkali_surface_washer))
+Rechargeable_batterybutton = Button(mainFrame, text="Rechargeable battery", width=35, padx=5, command=lambda:newwindow(Rechargeable_battery))
+Secure_flash_drivebutton = Button(mainFrame, text="Secure flash drive", width=35, padx=5, command=lambda:newwindow(Secure_flash_drive))
+Fortysecond_signature_blend_english_teabutton = Button(mainFrame, text="42nd signature blend english tea", width=35, padx=5, command=lambda:newwindow(Fortysecond_signature_blend_english_tea))
+Golden_roosterbutton = Button(mainFrame, text="Golden rooster", width=35, padx=5, command=lambda:newwindow(Golden_rooster))
+Roler_submariner_gold_wrist_watchbutton = Button(mainFrame, text="Roler submariner gold wrist watch", width=35, padx=5, command=lambda:newwindow(Roler_submariner_gold_wrist_watch))
+Battered_antique_bookbutton = Button(mainFrame, text="Battered antique book", width=35, padx=5, command=lambda:newwindow(Battered_antique_book))
+Fireklean_gun_lubebutton = Button(mainFrame, text="Fireklean gun lube", width=35, padx=5, command=lambda:newwindow(Fireklean_gun_lube))
+Old_firesteelbutton = Button(mainFrame, text="Old firesteel", width=35, padx=5, command=lambda:newwindow(Old_firesteel))
+Deadlyslobs_beard_oilbutton = Button(mainFrame, text="Deadlyslob's beard oil", width=35, padx=5, command=lambda:newwindow(Deadlyslobs_beard_oil))
+Golden_1gphonebutton = Button(mainFrame, text="Golden 1gphone", width=35, padx=5, command=lambda:newwindow(Golden_1gphone))
+sixsten140m_military_batterybutton = Button(mainFrame, text="6-sten-140-m military battery", width=35, padx=5, command=lambda:newwindow(sixsten140m_military_battery))
+Ofz_30x160mm_shellbutton = Button(mainFrame, text="Ofz 30x160mm shell", width=35, padx=5, command=lambda:newwindow(Ofz_30x160mm_shell))
+KEKtape_duct_tapebutton = Button(mainFrame, text="KEKtape duct tape", width=35, padx=5, command=lambda:newwindow(KEKtape_duct_tape))
+Raven_figurinebutton = Button(mainFrame, text="Raven figurine", width=35, padx=5, command=lambda:newwindow(Raven_figurine))
+Ripstop_clothbutton = Button(mainFrame, text="Ripstop cloth", width=35, padx=5, command=lambda:newwindow(Ripstop_cloth))
+Aramid_fiber_clothbutton = Button(mainFrame, text="Aramid fiber cloth", width=35, padx=5, command=lambda:newwindow(Aramid_fiber_cloth))
+Fleece_clothbutton = Button(mainFrame, text="Fleece cloth", width=35, padx=5, command=lambda:newwindow(Fleece_cloth))
+Polyamide_fabric_Cordurabutton = Button(mainFrame, text="Polyamide fabric Cordura", width=35, padx=5, command=lambda:newwindow(Polyamide_fabric_Cordura))
+Can_of_dr_lupos_coffee_beansbutton = Button(mainFrame, text="Can of dr. lupo's coffee beans", width=35, padx=5, command=lambda:newwindow(Can_of_dr_lupos_coffee_beans))

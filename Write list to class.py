@@ -3,7 +3,7 @@ loot = ["Paracord", "Corrugated Hose", "Malboro cigarettes", "Wilston cigarettes
         "Capacitors", "Wires", "Wd-40 100ml", "Car battery", "Spark plug", "Broken gphone", "CPU fan", "PC CPU", "Printed circuit board", "Graphics card", 
         "Powercord", "T-Shaped plug", "Antique vase", "Antique teapot", "Silver badge", "Clin wiper", "Portable defibrillator", "Medical bloodset", "Ox bleach", 
         "5l propane tank", "Fuel Conditioner", "Heat-exchange alkali surface washer", "Rechargeable battery", "Secure flash drive", "42nd signature blend english tea", 
-        "Golden rooster", "Roler submariner gold wrist watch", "Battered antique book", "Fireklean gun lube", "Old firesteel", "Deadlyslob's beard oil", "Golden 1gphone", 
+        "Golden rooster", "Roler submariner gold wrist watch", "Battered antique book", "Fireklean gun lube", "Old firesteel", "Deadlyslobs beard oil", "Golden 1gphone", 
         "6-sten-140-m military battery", "Ofz 30x160mm shell", "KEKtape duct tape", "Raven figurine", "Ripstop cloth", "Aramid fiber cloth", "Fleece cloth", 
         "Polyamide fabric Cordura", "Can of dr. lupo's coffee beans", "Veritas guitar pick" ]
 
@@ -16,13 +16,13 @@ loot2 = ["Paracord",
 "Cat_figurine",
 "Bronze_Lion",
 "Gas_analyzer",
-"Military_COFDM_wireless_signal_transmitter",
+"Military_COFDM",
 "Uhf_RFID_reader",
 "VPX_flash_storage_module",
 "Virtex_programmable_processor",
 "Capacitors",
 "Wires",
-"Wd40_100ml",
+"Wd-40_100ml",
 "Car_battery",
 "Spark_plug",
 "Broken_gphone",
@@ -31,7 +31,7 @@ loot2 = ["Paracord",
 "Printed_circuit_board",
 "Graphics_card",
 "Powercord",
-"TShaped_plug",
+"T-Shaped_plug",
 "Antique_vase",
 "Antique_teapot",
 "Silver_badge",
@@ -39,12 +39,12 @@ loot2 = ["Paracord",
 "Portable_defibrillator",
 "Medical_bloodset",
 "Ox_bleach",
-"Fivel_propane_tank",
+"5l_propane_tank",
 "Fuel_Conditioner",
-"Heat_exchange_alkali_surface_washer",
+"Heat-exchange_alkali surface washer",
 "Rechargeable_battery",
 "Secure_flash_drive",
-"Fortysecond_signature_blend_english_tea",
+"42nd_signature_blend_english_tea",
 "Golden_rooster",
 "Roler_submariner_gold_wrist_watch",
 "Battered_antique_book",
@@ -52,7 +52,7 @@ loot2 = ["Paracord",
 "Old_firesteel",
 "Deadlyslobs_beard_oil",
 "Golden_1gphone",
-"sixsten140m_military_battery",
+"6-sten-140-m_military_battery",
 "Ofz_30x160mm_shell",
 "KEKtape_duct_tape",
 "Raven_figurine",
@@ -60,22 +60,15 @@ loot2 = ["Paracord",
 "Aramid_fiber_cloth",
 "Fleece_cloth",
 "Polyamide_fabric_Cordura",
-"Can_of_dr_lupos_coffee_beans",
+"Can_of_dr._lupos_coffee_beans",
 "Veritas_guitar_pick",]
+
 
 items_file = open("Items.txt", "a")
 x=0
 
-#writing the grid positions for the button widgets below
-#while x < len(loot)-1:
-#    items_file.write(loot2[x] + 'button.grid(row=' + str(int(x/2)) + ', column=0)\n')
-#    x += 1
-#    items_file.write(loot2[x] + 'button.grid(row=' + str(int((x-1)/2)) + ', column=1)\n')
-#    x += 1
-
-#writing the button widgets to Items.txt
-while x < len(loot)-1:
-    items_file.write(loot2[x] + 'button = Button(mainFrame, text="' + loot[x] + '", width=35, padx=5, command=lambda:newwindow(' + loot2[x] + '))\n')
+while x < len(loot):
+    items_file.write(loot[x] + "\n")
     x += 1
 
 items_file.close()
