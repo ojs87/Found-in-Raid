@@ -7,11 +7,147 @@ loot = ["Paracord", "Corrugated Hose", "Malboro cigarettes", "Wilston cigarettes
         "6-sten-140-m military battery", "Ofz 30x160mm shell", "KEKtape duct tape", "Raven figurine", "Ripstop cloth", "Aramid fiber cloth", "Fleece cloth", 
         "Polyamide fabric Cordura", "Can of dr. lupo's coffee beans", "Veritas guitar pick" ]
 
+loot2 = ["Paracord",
+"Corrugated_Hose",
+"Malboro_cigarettes",
+"Wilston_cigarettes",
+"Strike_cigarettes",
+"Horse_figurine",
+"Cat_figurine",
+"Bronze_Lion",
+"Gas_analyzer",
+"Military_COFDM_wireless_signal_transmitter",
+"Uhf_RFID_reader",
+"VPX_flash_storage_module",
+"Virtex_programmable_processor",
+"Capacitors",
+"Wires",
+"Wd40_100ml",
+"Car_battery",
+"Spark_plug",
+"Broken_gphone",
+"CPU_fan",
+"PC_CPU",
+"Printed_circuit_board",
+"Graphics_card",
+"Powercord",
+"TShaped_plug",
+"Antique_vase",
+"Antique_teapot",
+"Silver_badge",
+"Clin_wiper",
+"Portable_defibrillator",
+"Medical_bloodset",
+"Ox_bleach",
+"Fivel_propane_tank",
+"Fuel_Conditioner",
+"Heat_exchange_alkali_surface_washer",
+"Rechargeable_battery",
+"Secure_flash_drive",
+"Fortysecond_signature_blend_english_tea",
+"Golden_rooster",
+"Roler_submariner_gold_wrist_watch",
+"Battered_antique_book",
+"Fireklean_gun_lube",
+"Old_firesteel",
+"Deadlyslobs_beard_oil",
+"Golden_1gphone",
+"sixsten140m_military_battery",
+"Ofz_30x160mm_shell",
+"KEKtape_duct_tape",
+"Raven_figurine",
+"Ripstop_cloth",
+"Aramid_fiber_cloth",
+"Fleece_cloth",
+"Polyamide_fabric_Cordura",
+"Can_of_dr_lupos_coffee_beans",
+"Veritas_guitar_pick",]
+
+loot3 = [
+    ("Paracord", "Paracord"),
+    ("Corrugated_Hose", "Corrugated Hose"),
+    ("Malboro_cigarettes", "Malboro cigarettes"),
+    ("Wilston_cigarettes", "Wilston cigarettes"),
+    ("Strike_cigarettes", "Strike cigarettes"),
+    ("Horse_figurine", "Horse figurine"),
+    ("Cat_figurine", "Cat figurine"),
+    ("Bronze_Lion", "Bronze Lion"),
+    ("Gas_analyzer", "Gas analyzer"),
+    ("Military_COFDM_wireless_signal_transmitter", "Military COFDM wireless signal transmitter"),
+    ("Uhf_RFID_reader", "Uhf RFID reader"),
+    ("VPX_flash_storage_module", "VPX flash storage module"),
+    ("Virtex_programmable_processor", "Virtex programmable processor"),
+    ("Capacitors", "Capacitors"),
+    ("Wires", "Wires"),
+    ("Wd40_100ml", "Wd-40 100ml"),
+    ("Car_battery", "Car battery"),
+    ("Spark_plug", "Spark plug"),
+    ("Broken_gphone", "Broken gphone"),
+    ("CPU_fan", "CPU fan"),
+    ("PC_CPU", "PC CPU"),
+    ("Printed_circuit_board", "Printed circuit board"),
+    ("Graphics_card", "Graphics card"),
+    ("Powercord", "Powercord"),
+    ("TShaped_plug", "T-Shaped plug"),
+    ("Antique_vase", "Antique vase"),
+    ("Antique_teapot", "Antique teapot"),
+    ("Silver_badge", "Silver badge"),
+    ("Clin_wiper", "Clin wiper"),
+    ("Portable_defibrillator", "Portable defibrillator"),
+    ("Medical_bloodset", "Medical bloodset"),
+    ("Ox_bleach", "Ox bleach"),
+    ("Fivel_propane_tank", "5l propane tank"),
+    ("Fuel_Conditioner", "Fuel Conditioner"),
+    ("Heat_exchange_alkali_surface_washer", "Heat-exchange alkali surface washer"),
+    ("Rechargeable_battery", "Rechargeable battery"),
+    ("Secure_flash_drive", "Secure flash drive"),
+    ("Fortysecond_signature_blend_english_tea", "42nd signature blend english tea"),
+    ("Golden_rooster", "Golden rooster"),
+    ("Roler_submariner_gold_wrist_watch", "Roler submariner gold wrist watch"),
+    ("Battered_antique_book", "Battered antique book"),
+    ("Fireklean_gun_lube", "Fireklean gun lube"),
+    ("Old_firesteel", "Old firesteel"),
+    ("Deadlyslobs_beard_oil", "Deadlyslob's beard oil"),
+    ("Golden_1gphone", "Golden 1gphone"),
+    ("sixsten140m_military_battery", "6-sten-140-m military battery"),
+    ("Ofz_30x160mm_shell", "Ofz 30x160mm shell"),
+    ("KEKtape_duct_tape", "KEKtape duct tape"),
+    ("Raven_figurine", "Raven figurine"),
+    ("Ripstop_cloth", "Ripstop cloth"),
+    ("Aramid_fiber_cloth", "Aramid fiber cloth"),
+    ("Fleece_cloth", "Fleece cloth"),
+    ("Polyamide_fabric_Cordura", "Polyamide fabric Cordura"),
+    ("Can_of_dr_lupos_coffee_beans", "Can of dr. lupo's coffee beans"),
+    ("Veritas_guitar_pick", "Veritas guitar pick")
+    ]
+
 items_file = open("Items.txt", "a")
 x=0
 
-while x < len(loot):
-    items_file.write(loot[x] + "\n")
+#writing the grid positions for the button widgets below
+#while x < len(loot)-1:
+#    items_file.write(loot2[x] + 'button.grid(row=' + str(int(x/2)) + ', column=0)\n')
+#    x += 1
+#    items_file.write(loot2[x] + 'button.grid(row=' + str(int((x-1)/2)) + ', column=4)\n')
+#    x += 1
+
+#items_file.write(loot2[x] + 'button.grid(row=' + str(int(x/2)) + ', column=0)\n')
+
+#writing the button widgets to Items.txt
+#while x < len(loot)-1:
+#    items_file.write(loot2[x] + 'button = Button(mainFrame, text="' + loot[x] + '", width=35, padx=5, command=lambda:newwindow(' + loot2[x] + '))\n')
+#    x += 1
+
+#while x<len(loot):
+#    items_file.write(loot2[x] + 'buttonAdd = Button(mainFrame, text="+", command=lambda:addtoclass(' + loot2[x] + '))\n')
+#    x += 1
+
+#while x<len(loot):
+#    items_file.write(loot2[x] + 'buttonSubtract = Button(mainFrame, text="-", command=lambda:subtractfromclass(' + loot2[x] + '))\n')
+#    x += 1
+
+while x<len(loot):
+    items_file.write('\n    ("' + loot2[x] + '", "' + loot[x] + '"),')
     x += 1
 
 items_file.close()

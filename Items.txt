@@ -1,55 +1,279 @@
-Paracord
-Corrugated Hose
-Malboro cigarettes
-Wilston cigarettes
-Strike cigarettes
-Horse figurine
-Cat figurine
-Bronze Lion
-Gas analyzer
-Military COFDM wireless signal transmitter
-Uhf RFID reader
-VPX flash storage module
-Virtex programmable processor
-Capacitors
-Wires
-Wd-40 100ml
-Car battery
-Spark plug
-Broken gphone
-CPU fan
-PC CPU
-Printed circuit board
-Graphics card
-Powercord
-T-Shaped plug
-Antique vase
-Antique teapot
-Silver badge
-Clin wiper
-Portable defibrillator
-Medical bloodset
-Ox bleach
-5l propane tank
-Fuel Conditioner
-Heat-exchange alkali surface washer
-Rechargeable battery
-Secure flash drive
-42nd signature blend english tea
-Golden rooster
-Roler submariner gold wrist watch
-Battered antique book
-Fireklean gun lube
-Old firesteel
-Deadlyslob's beard oil
-Golden 1gphone
-6-sten-140-m military battery
-Ofz 30x160mm shell
-KEKtape duct tape
-Raven figurine
-Ripstop cloth
-Aramid fiber cloth
-Fleece cloth
-Polyamide fabric Cordura
-Can of dr. lupo's coffee beans
-Veritas guitar pick
+
+ParacordbuttonSubtract.grid(row=0, column=1)
+Corrugated_HosebuttonSubtract.grid(row=0, column=5)
+Malboro_cigarettesbuttonSubtract.grid(row=1, column=1)
+Wilston_cigarettesbuttonSubtract.grid(row=1, column=5)
+Strike_cigarettesbuttonSubtract.grid(row=2, column=1)
+Horse_figurinebuttonSubtract.grid(row=2, column=5)
+Cat_figurinebuttonSubtract.grid(row=3, column=1)
+Bronze_LionbuttonSubtract.grid(row=3, column=5)
+Gas_analyzerbuttonSubtract.grid(row=4, column=1)
+Military_COFDM_wireless_signal_transmitterbuttonSubtract.grid(row=4, column=5)
+Uhf_RFID_readerbuttonSubtract.grid(row=5, column=1)
+VPX_flash_storage_modulebuttonSubtract.grid(row=5, column=5)
+Virtex_programmable_processorbuttonSubtract.grid(row=6, column=1)
+CapacitorsbuttonSubtract.grid(row=6, column=5)
+WiresbuttonSubtract.grid(row=7, column=1)
+Wd40_100mlbuttonSubtract.grid(row=7, column=5)
+Car_batterybuttonSubtract.grid(row=8, column=1)
+Spark_plugbuttonSubtract.grid(row=8, column=5)
+Broken_gphonebuttonSubtract.grid(row=9, column=1)
+CPU_fanbuttonSubtract.grid(row=9, column=5)
+PC_CPUbuttonSubtract.grid(row=10, column=1)
+Printed_circuit_boardbuttonSubtract.grid(row=10, column=5)
+Graphics_cardbuttonSubtract.grid(row=11, column=1)
+PowercordbuttonSubtract.grid(row=11, column=5)
+TShaped_plugbuttonSubtract.grid(row=12, column=1)
+Antique_vasebuttonSubtract.grid(row=12, column=5)
+Antique_teapotbuttonSubtract.grid(row=13, column=1)
+Silver_badgebuttonSubtract.grid(row=13, column=5)
+Clin_wiperbuttonSubtract.grid(row=14, column=1)
+Portable_defibrillatorbuttonSubtract.grid(row=14, column=5)
+Medical_bloodsetbuttonSubtract.grid(row=15, column=1)
+Ox_bleachbuttonSubtract.grid(row=15, column=5)
+Fivel_propane_tankbuttonSubtract.grid(row=16, column=1)
+Fuel_ConditionerbuttonSubtract.grid(row=16, column=5)
+Heat_exchange_alkali_surface_washerbuttonSubtract.grid(row=17, column=1)
+Rechargeable_batterybuttonSubtract.grid(row=17, column=5)
+Secure_flash_drivebuttonSubtract.grid(row=18, column=1)
+Fortysecond_signature_blend_english_teabuttonSubtract.grid(row=18, column=5)
+Golden_roosterbuttonSubtract.grid(row=19, column=1)
+Roler_submariner_gold_wrist_watchbuttonSubtract.grid(row=19, column=5)
+Battered_antique_bookbuttonSubtract.grid(row=20, column=1)
+Fireklean_gun_lubebuttonSubtract.grid(row=20, column=5)
+Old_firesteelbuttonSubtract.grid(row=21, column=1)
+Deadlyslobs_beard_oilbuttonSubtract.grid(row=21, column=5)
+Golden_1gphonebuttonSubtract.grid(row=22, column=1)
+sixsten140m_military_batterybuttonSubtract.grid(row=22, column=5)
+Ofz_30x160mm_shellbuttonSubtract.grid(row=23, column=1)
+KEKtape_duct_tapebuttonSubtract.grid(row=23, column=5)
+Raven_figurinebuttonSubtract.grid(row=24, column=1)
+Ripstop_clothbuttonSubtract.grid(row=24, column=5)
+Aramid_fiber_clothbuttonSubtract.grid(row=25, column=1)
+Fleece_clothbuttonSubtract.grid(row=25, column=5)
+Polyamide_fabric_CordurabuttonSubtract.grid(row=26, column=1)
+Can_of_dr_lupos_coffee_beansbuttonSubtract.grid(row=26, column=5)
+Veritas_guitar_pickbutton.grid(row=27, column=1)
+ParacordbuttonAdd.grid(row=0, column=3)
+Corrugated_HosebuttonAdd.grid(row=0, column=7)
+Malboro_cigarettesbuttonAdd.grid(row=1, column=3)
+Wilston_cigarettesbuttonAdd.grid(row=1, column=7)
+Strike_cigarettesbuttonAdd.grid(row=2, column=3)
+Horse_figurinebuttonAdd.grid(row=2, column=7)
+Cat_figurinebuttonAdd.grid(row=3, column=3)
+Bronze_LionbuttonAdd.grid(row=3, column=7)
+Gas_analyzerbuttonAdd.grid(row=4, column=3)
+Military_COFDM_wireless_signal_transmitterbuttonAdd.grid(row=4, column=7)
+Uhf_RFID_readerbuttonAdd.grid(row=5, column=3)
+VPX_flash_storage_modulebuttonAdd.grid(row=5, column=7)
+Virtex_programmable_processorbuttonAdd.grid(row=6, column=3)
+CapacitorsbuttonAdd.grid(row=6, column=7)
+WiresbuttonAdd.grid(row=7, column=3)
+Wd40_100mlbuttonAdd.grid(row=7, column=7)
+Car_batterybuttonAdd.grid(row=8, column=3)
+Spark_plugbuttonAdd.grid(row=8, column=7)
+Broken_gphonebuttonAdd.grid(row=9, column=3)
+CPU_fanbuttonAdd.grid(row=9, column=7)
+PC_CPUbuttonAdd.grid(row=10, column=3)
+Printed_circuit_boardbuttonAdd.grid(row=10, column=7)
+Graphics_cardbuttonAdd.grid(row=11, column=3)
+PowercordbuttonAdd.grid(row=11, column=7)
+TShaped_plugbuttonAdd.grid(row=12, column=3)
+Antique_vasebuttonAdd.grid(row=12, column=7)
+Antique_teapotbuttonAdd.grid(row=13, column=3)
+Silver_badgebuttonAdd.grid(row=13, column=7)
+Clin_wiperbuttonAdd.grid(row=14, column=3)
+Portable_defibrillatorbuttonAdd.grid(row=14, column=7)
+Medical_bloodsetbuttonAdd.grid(row=15, column=3)
+Ox_bleachbuttonAdd.grid(row=15, column=7)
+Fivel_propane_tankbuttonAdd.grid(row=16, column=3)
+Fuel_ConditionerbuttonAdd.grid(row=16, column=7)
+Heat_exchange_alkali_surface_washerbuttonAdd.grid(row=17, column=3)
+Rechargeable_batterybuttonAdd.grid(row=17, column=7)
+Secure_flash_drivebuttonAdd.grid(row=18, column=3)
+Fortysecond_signature_blend_english_teabuttonAdd.grid(row=18, column=7)
+Golden_roosterbuttonAdd.grid(row=19, column=3)
+Roler_submariner_gold_wrist_watchbuttonAdd.grid(row=19, column=7)
+Battered_antique_bookbuttonAdd.grid(row=20, column=3)
+Fireklean_gun_lubebuttonAdd.grid(row=20, column=7)
+Old_firesteelbuttonAdd.grid(row=21, column=3)
+Deadlyslobs_beard_oilbuttonAdd.grid(row=21, column=7)
+Golden_1gphonebuttonAdd.grid(row=22, column=3)
+sixsten140m_military_batterybuttonAdd.grid(row=22, column=7)
+Ofz_30x160mm_shellbuttonAdd.grid(row=23, column=3)
+KEKtape_duct_tapebuttonAdd.grid(row=23, column=7)
+Raven_figurinebuttonAdd.grid(row=24, column=3)
+Ripstop_clothbuttonAdd.grid(row=24, column=7)
+Aramid_fiber_clothbuttonAdd.grid(row=25, column=3)
+Fleece_clothbuttonAdd.grid(row=25, column=7)
+Polyamide_fabric_CordurabuttonAdd.grid(row=26, column=3)
+Can_of_dr_lupos_coffee_beansbuttonAdd.grid(row=26, column=7)
+Veritas_guitar_pickbutton.grid(row=27, column=3)
+ParacordbuttonAdd.grid(row=0, column=3)
+Corrugated_HosebuttonAdd.grid(row=0, column=7)
+Malboro_cigarettesbuttonAdd.grid(row=1, column=3)
+Wilston_cigarettesbuttonAdd.grid(row=1, column=7)
+Strike_cigarettesbuttonAdd.grid(row=2, column=3)
+Horse_figurinebuttonAdd.grid(row=2, column=7)
+Cat_figurinebuttonAdd.grid(row=3, column=3)
+Bronze_LionbuttonAdd.grid(row=3, column=7)
+Gas_analyzerbuttonAdd.grid(row=4, column=3)
+Military_COFDM_wireless_signal_transmitterbuttonAdd.grid(row=4, column=7)
+Uhf_RFID_readerbuttonAdd.grid(row=5, column=3)
+VPX_flash_storage_modulebuttonAdd.grid(row=5, column=7)
+Virtex_programmable_processorbuttonAdd.grid(row=6, column=3)
+CapacitorsbuttonAdd.grid(row=6, column=7)
+WiresbuttonAdd.grid(row=7, column=3)
+Wd40_100mlbuttonAdd.grid(row=7, column=7)
+Car_batterybuttonAdd.grid(row=8, column=3)
+Spark_plugbuttonAdd.grid(row=8, column=7)
+Broken_gphonebuttonAdd.grid(row=9, column=3)
+CPU_fanbuttonAdd.grid(row=9, column=7)
+PC_CPUbuttonAdd.grid(row=10, column=3)
+Printed_circuit_boardbuttonAdd.grid(row=10, column=7)
+Graphics_cardbuttonAdd.grid(row=11, column=3)
+PowercordbuttonAdd.grid(row=11, column=7)
+TShaped_plugbuttonAdd.grid(row=12, column=3)
+Antique_vasebuttonAdd.grid(row=12, column=7)
+Antique_teapotbuttonAdd.grid(row=13, column=3)
+Silver_badgebuttonAdd.grid(row=13, column=7)
+Clin_wiperbuttonAdd.grid(row=14, column=3)
+Portable_defibrillatorbuttonAdd.grid(row=14, column=7)
+Medical_bloodsetbuttonAdd.grid(row=15, column=3)
+Ox_bleachbuttonAdd.grid(row=15, column=7)
+Fivel_propane_tankbuttonAdd.grid(row=16, column=3)
+Fuel_ConditionerbuttonAdd.grid(row=16, column=7)
+Heat_exchange_alkali_surface_washerbuttonAdd.grid(row=17, column=3)
+Rechargeable_batterybuttonAdd.grid(row=17, column=7)
+Secure_flash_drivebuttonAdd.grid(row=18, column=3)
+Fortysecond_signature_blend_english_teabuttonAdd.grid(row=18, column=7)
+Golden_roosterbuttonAdd.grid(row=19, column=3)
+Roler_submariner_gold_wrist_watchbuttonAdd.grid(row=19, column=7)
+Battered_antique_bookbuttonAdd.grid(row=20, column=3)
+Fireklean_gun_lubebuttonAdd.grid(row=20, column=7)
+Old_firesteelbuttonAdd.grid(row=21, column=3)
+Deadlyslobs_beard_oilbuttonAdd.grid(row=21, column=7)
+Golden_1gphonebuttonAdd.grid(row=22, column=3)
+sixsten140m_military_batterybuttonAdd.grid(row=22, column=7)
+Ofz_30x160mm_shellbuttonAdd.grid(row=23, column=3)
+KEKtape_duct_tapebuttonAdd.grid(row=23, column=7)
+Raven_figurinebuttonAdd.grid(row=24, column=3)
+Ripstop_clothbuttonAdd.grid(row=24, column=7)
+Aramid_fiber_clothbuttonAdd.grid(row=25, column=3)
+Fleece_clothbuttonAdd.grid(row=25, column=7)
+Polyamide_fabric_CordurabuttonAdd.grid(row=26, column=3)
+Can_of_dr_lupos_coffee_beansbuttonAdd.grid(row=26, column=7)
+Veritas_guitar_pickbutton.grid(row=27, column=3)
+Paracordbutton.grid(row=0, column=0)
+Corrugated_Hosebutton.grid(row=0, column=4)
+Malboro_cigarettesbutton.grid(row=1, column=0)
+Wilston_cigarettesbutton.grid(row=1, column=4)
+Strike_cigarettesbutton.grid(row=2, column=0)
+Horse_figurinebutton.grid(row=2, column=4)
+Cat_figurinebutton.grid(row=3, column=0)
+Bronze_Lionbutton.grid(row=3, column=4)
+Gas_analyzerbutton.grid(row=4, column=0)
+Military_COFDM_wireless_signal_transmitterbutton.grid(row=4, column=4)
+Uhf_RFID_readerbutton.grid(row=5, column=0)
+VPX_flash_storage_modulebutton.grid(row=5, column=4)
+Virtex_programmable_processorbutton.grid(row=6, column=0)
+Capacitorsbutton.grid(row=6, column=4)
+Wiresbutton.grid(row=7, column=0)
+Wd40_100mlbutton.grid(row=7, column=4)
+Car_batterybutton.grid(row=8, column=0)
+Spark_plugbutton.grid(row=8, column=4)
+Broken_gphonebutton.grid(row=9, column=0)
+CPU_fanbutton.grid(row=9, column=4)
+PC_CPUbutton.grid(row=10, column=0)
+Printed_circuit_boardbutton.grid(row=10, column=4)
+Graphics_cardbutton.grid(row=11, column=0)
+Powercordbutton.grid(row=11, column=4)
+TShaped_plugbutton.grid(row=12, column=0)
+Antique_vasebutton.grid(row=12, column=4)
+Antique_teapotbutton.grid(row=13, column=0)
+Silver_badgebutton.grid(row=13, column=4)
+Clin_wiperbutton.grid(row=14, column=0)
+Portable_defibrillatorbutton.grid(row=14, column=4)
+Medical_bloodsetbutton.grid(row=15, column=0)
+Ox_bleachbutton.grid(row=15, column=4)
+Fivel_propane_tankbutton.grid(row=16, column=0)
+Fuel_Conditionerbutton.grid(row=16, column=4)
+Heat_exchange_alkali_surface_washerbutton.grid(row=17, column=0)
+Rechargeable_batterybutton.grid(row=17, column=4)
+Secure_flash_drivebutton.grid(row=18, column=0)
+Fortysecond_signature_blend_english_teabutton.grid(row=18, column=4)
+Golden_roosterbutton.grid(row=19, column=0)
+Roler_submariner_gold_wrist_watchbutton.grid(row=19, column=4)
+Battered_antique_bookbutton.grid(row=20, column=0)
+Fireklean_gun_lubebutton.grid(row=20, column=4)
+Old_firesteelbutton.grid(row=21, column=0)
+Deadlyslobs_beard_oilbutton.grid(row=21, column=4)
+Golden_1gphonebutton.grid(row=22, column=0)
+sixsten140m_military_batterybutton.grid(row=22, column=4)
+Ofz_30x160mm_shellbutton.grid(row=23, column=0)
+KEKtape_duct_tapebutton.grid(row=23, column=4)
+Raven_figurinebutton.grid(row=24, column=0)
+Ripstop_clothbutton.grid(row=24, column=4)
+Aramid_fiber_clothbutton.grid(row=25, column=0)
+Fleece_clothbutton.grid(row=25, column=4)
+Polyamide_fabric_Cordurabutton.grid(row=26, column=0)
+Can_of_dr_lupos_coffee_beansbutton.grid(row=26, column=4)
+Veritas_guitar_pickbutton.grid(row=27, column=0)
+
+loot3 = [
+    ("Paracord", "Paracord"),
+    ("Corrugated_Hose", "Corrugated Hose"),
+    ("Malboro_cigarettes", "Malboro cigarettes"),
+    ("Wilston_cigarettes", "Wilston cigarettes"),
+    ("Strike_cigarettes", "Strike cigarettes"),
+    ("Horse_figurine", "Horse figurine"),
+    ("Cat_figurine", "Cat figurine"),
+    ("Bronze_Lion", "Bronze Lion"),
+    ("Gas_analyzer", "Gas analyzer"),
+    ("Military_COFDM_wireless_signal_transmitter", "Military COFDM wireless signal transmitter"),
+    ("Uhf_RFID_reader", "Uhf RFID reader"),
+    ("VPX_flash_storage_module", "VPX flash storage module"),
+    ("Virtex_programmable_processor", "Virtex programmable processor"),
+    ("Capacitors", "Capacitors"),
+    ("Wires", "Wires"),
+    ("Wd40_100ml", "Wd-40 100ml"),
+    ("Car_battery", "Car battery"),
+    ("Spark_plug", "Spark plug"),
+    ("Broken_gphone", "Broken gphone"),
+    ("CPU_fan", "CPU fan"),
+    ("PC_CPU", "PC CPU"),
+    ("Printed_circuit_board", "Printed circuit board"),
+    ("Graphics_card", "Graphics card"),
+    ("Powercord", "Powercord"),
+    ("TShaped_plug", "T-Shaped plug"),
+    ("Antique_vase", "Antique vase"),
+    ("Antique_teapot", "Antique teapot"),
+    ("Silver_badge", "Silver badge"),
+    ("Clin_wiper", "Clin wiper"),
+    ("Portable_defibrillator", "Portable defibrillator"),
+    ("Medical_bloodset", "Medical bloodset"),
+    ("Ox_bleach", "Ox bleach"),
+    ("Fivel_propane_tank", "5l propane tank"),
+    ("Fuel_Conditioner", "Fuel Conditioner"),
+    ("Heat_exchange_alkali_surface_washer", "Heat-exchange alkali surface washer"),
+    ("Rechargeable_battery", "Rechargeable battery"),
+    ("Secure_flash_drive", "Secure flash drive"),
+    ("Fortysecond_signature_blend_english_tea", "42nd signature blend english tea"),
+    ("Golden_rooster", "Golden rooster"),
+    ("Roler_submariner_gold_wrist_watch", "Roler submariner gold wrist watch"),
+    ("Battered_antique_book", "Battered antique book"),
+    ("Fireklean_gun_lube", "Fireklean gun lube"),
+    ("Old_firesteel", "Old firesteel"),
+    ("Deadlyslobs_beard_oil", "Deadlyslob's beard oil"),
+    ("Golden_1gphone", "Golden 1gphone"),
+    ("sixsten140m_military_battery", "6-sten-140-m military battery"),
+    ("Ofz_30x160mm_shell", "Ofz 30x160mm shell"),
+    ("KEKtape_duct_tape", "KEKtape duct tape"),
+    ("Raven_figurine", "Raven figurine"),
+    ("Ripstop_cloth", "Ripstop cloth"),
+    ("Aramid_fiber_cloth", "Aramid fiber cloth"),
+    ("Fleece_cloth", "Fleece cloth"),
+    ("Polyamide_fabric_Cordura", "Polyamide fabric Cordura"),
+    ("Can_of_dr_lupos_coffee_beans", "Can of dr. lupo's coffee beans"),
+    ("Veritas_guitar_pick", "Veritas guitar pick")
+    ]
