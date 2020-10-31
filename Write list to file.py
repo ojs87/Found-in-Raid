@@ -1,10 +1,10 @@
-loot = ["Paracord", "Corrugated Hose", "Malboro cigarettes", "Wilston cigarettes", "Strike cigarettes", "Horse figurine", "Cat figurine", "Bronze Lion", 
-        "Gas analyzer", "Military COFDM wireless signal transmitter", "Uhf RFID reader", "VPX flash storage module", "Virtex programmable processor", 
-        "Capacitors", "Wires", "Wd-40 100ml", "Car battery", "Spark plug", "Broken gphone", "CPU fan", "PC CPU", "Printed circuit board", "Graphics card", 
-        "Powercord", "T-Shaped plug", "Antique vase", "Antique teapot", "Silver badge", "Clin wiper", "Portable defibrillator", "Medical bloodset", "Ox bleach", 
-        "5l propane tank", "Fuel Conditioner", "Heat-exchange alkali surface washer", "Rechargeable battery", "Secure flash drive", "42nd signature blend english tea", 
-        "Golden rooster", "Roler submariner gold wrist watch", "Battered antique book", "Fireklean gun lube", "Old firesteel", "Deadlyslob's beard oil", "Golden 1gphone", 
-        "6-sten-140-m military battery", "Ofz 30x160mm shell", "KEKtape duct tape", "Raven figurine", "Ripstop cloth", "Aramid fiber cloth", "Fleece cloth", 
+loot = ["Paracord", "Corrugated Hose", "Malboro cigarettes", "Wilston cigarettes", "Strike cigarettes", "Horse figurine", "Cat figurine", "Bronze Lion",
+        "Gas analyzer", "Military COFDM wireless signal transmitter", "Uhf RFID reader", "VPX flash storage module", "Virtex programmable processor",
+        "Capacitors", "Wires", "Wd-40 100ml", "Car battery", "Spark plug", "Broken gphone", "CPU fan", "PC CPU", "Printed circuit board", "Graphics card",
+        "Powercord", "T-Shaped plug", "Antique vase", "Antique teapot", "Silver badge", "Clin wiper", "Portable defibrillator", "Medical bloodset", "Ox bleach",
+        "5l propane tank", "Fuel Conditioner", "Heat-exchange alkali surface washer", "Rechargeable battery", "Secure flash drive", "42nd signature blend english tea",
+        "Golden rooster", "Roler submariner gold wrist watch", "Battered antique book", "Fireklean gun lube", "Old firesteel", "Deadlyslob's beard oil", "Golden 1gphone",
+        "6-sten-140-m military battery", "Ofz 30x160mm shell", "KEKtape duct tape", "Raven figurine", "Ripstop cloth", "Aramid fiber cloth", "Fleece cloth",
         "Polyamide fabric Cordura", "Can of dr. lupo's coffee beans", "Veritas guitar pick" ]
 
 loot2 = ["Paracord",
@@ -52,7 +52,7 @@ loot2 = ["Paracord",
 "Old_firesteel",
 "Deadlyslobs_beard_oil",
 "Golden_1gphone",
-"sixsten140m_military_battery",
+"Sixsten140m_military_battery",
 "Ofz_30x160mm_shell",
 "KEKtape_duct_tape",
 "Raven_figurine",
@@ -62,6 +62,20 @@ loot2 = ["Paracord",
 "Polyamide_fabric_Cordura",
 "Can_of_dr_lupos_coffee_beans",
 "Veritas_guitar_pick",]
+
+loot4 = ['Fortysecond_signature_blend_english_tea', 'Fivel_propane_tank', 'Sixsten140m_military_battery', 'Antique_teapot', 'Antique_vase', 'Aramid_fiber_cloth', 'Battered_antique_book', 'Broken_gphone',
+'Bronze_Lion', 'CPU_fan', 'Can_of_dr_lupos_coffee_beans', 'Capacitors', 'Car_battery', 'Cat_figurine',
+'Clin_wiper', 'Corrugated_Hose', 'Deadlyslobs_beard_oil', 'Fireklean_gun_lube',
+'Fleece_cloth', 'Fuel_Conditioner', 'Gas_analyzer',
+'Golden_1gphone', 'Golden_rooster', 'Graphics_card', 'Heat_exchange_alkali_surface_washer',
+'Horse_figurine', 'KEKtape_duct_tape', 'Malboro_cigarettes', 'Medical_bloodset',
+'Military_COFDM_wireless_signal_transmitter', 'Ofz_30x160mm_shell', 'Old_firesteel',
+'Ox_bleach', 'PC_CPU', 'Paracord', 'Polyamide_fabric_Cordura', 'Portable_defibrillator',
+'Powercord', 'Printed_circuit_board', 'Raven_figurine', 'Rechargeable_battery', 'Ripstop_cloth',
+'Roler_submariner_gold_wrist_watch', 'Secure_flash_drive', 'Silver_badge',
+'Spark_plug', 'Strike_cigarettes', 'TShaped_plug',
+'Uhf_RFID_reader', 'VPX_flash_storage_module', 'Veritas_guitar_pick', 'Virtex_programmable_processor',
+'Wd40_100ml', 'Wilston_cigarettes', 'Wires']
 
 loot3 = [
     ("Paracord", "Paracord"),
@@ -122,8 +136,8 @@ loot3 = [
     ]
 
 items_file = open("Items.txt", "a")
-x=0
-
+loot2.sort()
+loot.sort()
 #writing the grid positions for the button widgets below
 #while x < len(loot)-1:
 #    items_file.write(loot2[x] + 'button.grid(row=' + str(int(x/2)) + ', column=0)\n')
@@ -137,17 +151,56 @@ x=0
 #while x < len(loot)-1:
 #    items_file.write(loot2[x] + 'button = Button(mainFrame, text="' + loot[x] + '", width=35, padx=5, command=lambda:newwindow(' + loot2[x] + '))\n')
 #    x += 1
+x=0
+while x<len(loot):
+    items_file.write(loot4[x] + 'label = Label(root, text="' + loot[x] + '", width=35)\n')
+    x += 1
 
-#while x<len(loot):
-#    items_file.write(loot2[x] + 'buttonAdd = Button(mainFrame, text="+", command=lambda:addtoclass(' + loot2[x] + '))\n')
-#    x += 1
-
-#while x<len(loot):
-#    items_file.write(loot2[x] + 'buttonSubtract = Button(mainFrame, text="-", command=lambda:subtractfromclass(' + loot2[x] + '))\n')
-#    x += 1
+x=0
+while x<len(loot)/2:
+    items_file.write(loot4[x] + 'label.grid(row=' + str(x) + ', column=0)\n')
+    x += 1
 
 while x<len(loot):
-    items_file.write('\n    ("' + loot2[x] + '", "' + loot[x] + '"),')
+    items_file.write(loot4[x] + 'label.grid(row=' + str(x-28) + ', column=4)\n')
     x += 1
+
+#items_file.write(loot4[x] + 'label.grid(row=' + str(x-28) + ', column=4)\n')
+
+x=0
+while x<len(loot):
+    items_file.write(loot4[x] + 'buttonAdd = Button(root, text="+", command=lambda:addone(' + str(x + 1) + '), width = 4)\n')
+    x += 1
+
+x=0
+while x<len(loot)/2:
+    items_file.write(loot4[x] + 'buttonAdd.grid(row=' + str(x) + ', column=3)\n')
+    x += 1
+
+while x<len(loot):
+    items_file.write(loot4[x] + 'buttonAdd.grid(row=' + str(x-28) + ', column=7)\n')
+    x += 1
+
+#items_file.write(loot4[x] + 'buttonAdd.grid(row=' + str(int(x/2)) + ', column=3)\n')
+
+x=0
+while x<len(loot):
+    items_file.write(loot4[x] + 'buttonSubtract = Button(root, text="-", command=lambda:subone(' + str(x + 1) + '), width = 4)\n')
+    x += 1
+
+x=0
+while x<len(loot)/2:
+    items_file.write(loot4[x] + 'buttonSubtract.grid(row=' + str(x) + ', column=1)\n')
+    x += 1
+
+while x<len(loot):
+    items_file.write(loot4[x] + 'buttonSubtract.grid(row=' + str(x-28) + ', column=5)\n')
+    x += 1
+
+#items_file.write(loot4[x] + 'buttonSubtract.grid(row=' + str(int(x/2)) + ', column=1)\n')
+
+#while x<len(loot):
+#    items_file.write('\n    ("' + loot2[x] + '", "' + loot[x] + '"),')
+#    x += 1
 
 items_file.close()

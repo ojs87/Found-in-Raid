@@ -1,3 +1,79 @@
+from tkinter import *
+from Itemclass import Lootinfo
+import sqlite3
+
+root = Tk()
+root.title("Hello")
+
+conn = sqlite3.connect('item_booktestcode.db')
+c = conn.cursor()
+c.execute("SELECT *, oid FROM addresses")
+records=c.fetchall()
+conn.commit()
+conn.close()
+
+x=0
+for a in records:
+    questadd = a[2] + a[3]
+    records1 = str(a[5]) + " / " + str(questadd)
+    showcurrent = Label(root, text=records1, width=10)
+
+    if x < len(records)/2:
+        showcurrent.grid(row=x, column=2)
+    else:
+        showcurrent.grid(row=int(x-28), column=6)
+
+    x += 1
+
+
+def showCurrent(record_id):
+    return
+
+def addone(record_id):
+
+    conn = sqlite3.connect('item_booktestcode.db')
+    c = conn.cursor()
+
+    c.execute("UPDATE addresses SET mycount=mycount + 1 WHERE oid = :oid", {'oid': record_id})
+    c.execute("SELECT *, oid FROM addresses")
+
+    c.execute("SELECT *, oid FROM addresses WHERE oid = :oid",{'oid': record_id})
+    records = c.fetchall()
+
+    questadd = records[0][2] + records[0][3]
+    records1 = str(records[0][5]) + " / " + str(questadd)
+    showcurrent = Label(root, text=records1, width=10)
+
+    if record_id - 1 < 28:
+        showcurrent.grid(row=record_id - 1, column = 2)
+    else:
+        showcurrent.grid(row=record_id - 29, column = 6)
+    conn.commit()
+    conn.close()
+
+def subone(record_id):
+
+    conn = sqlite3.connect('item_booktestcode.db')
+    c = conn.cursor()
+
+    c.execute("UPDATE addresses SET mycount=mycount - 1 WHERE oid = :oid", {'oid': record_id})
+    c.execute("SELECT *, oid FROM addresses")
+
+    c.execute("SELECT *, oid FROM addresses WHERE oid = :oid",{'oid': record_id})
+    records = c.fetchall()
+
+    questadd = records[0][2] + records[0][3]
+    records1 = str(records[0][5]) + " / " + str(questadd)
+    showcurrent = Label(root, text=records1, width=10)
+
+    if record_id - 1 < 28:
+        showcurrent.grid(row=record_id - 1, column = 2)
+    else:
+        showcurrent.grid(row=record_id - 29, column = 6)
+
+    conn.commit()
+    conn.close()
+
 Fortysecond_signature_blend_english_tealabel = Label(root, text="42nd signature blend english tea", width=35)
 Fivel_propane_tanklabel = Label(root, text="5l propane tank", width=35)
 Sixsten140m_military_batterylabel = Label(root, text="6-sten-140-m military battery", width=35)
@@ -658,3 +734,5 @@ Virtex_programmable_processorbuttonSubtract.grid(row=23, column=5)
 Wd40_100mlbuttonSubtract.grid(row=24, column=5)
 Wilston_cigarettesbuttonSubtract.grid(row=25, column=5)
 WiresbuttonSubtract.grid(row=26, column=5)
+
+root.mainloop()
