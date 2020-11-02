@@ -7,7 +7,7 @@ root.title("Hello")
 # alphabetically sorted list for the label name
 loot = ['42nd signature blend english tea', '5l propane tank', '6-sten-140-m military battery', 'Antique teapot', 'Antique vase', 'Aramid fiber cloth', 'Battered antique book', 'Broken gphone', 'Bronze Lion', 'CPU fan', "Can of dr. lupo's coffee beans", 'Capacitors', 'Car battery', 'Cat figurine', 'Clin wiper', 'Corrugated Hose', "Deadlyslob's beard oil", 'Fireklean gun lube', 'Fleece cloth', 'Fuel Conditioner', 'Gas analyzer', 'Golden 1gphone', 'Golden rooster', 'Graphics card', 'Heat-exchange alkali surface washer', 'Horse figurine', 'KEKtape duct tape', 'Malboro cigarettes', 'Medical bloodset', 'Military COFDM wireless signal transmitter', 'Ofz 30x160mm shell', 'Old firesteel', 'Ox bleach', 'PC CPU', 'Paracord', 'Polyamide fabric Cordura', 'Portable defibrillator', 'Powercord', 'Printed circuit board', 'Raven figurine', 'Rechargeable battery', 'Ripstop cloth', 'Roler submariner gold wrist watch', 'Secure flash drive', 'Silver badge', 'Spark plug', 'Strike cigarettes', 'T-Shaped plug', 'Uhf RFID reader', 'VPX flash storage module', 'Veritas guitar pick', 'Virtex programmable processor', 'Wd-40 100ml', 'Wilston cigarettes', 'Wires']
 
-conn = sqlite3.connect('item_booktestcode.db')
+conn = sqlite3.connect('item_book.db')
 c = conn.cursor()
 c.execute("SELECT *, oid FROM addresses")
 records=c.fetchall()
@@ -60,7 +60,7 @@ def createButtons():
 #function for adding 1 to the database value and redrawing the value on screen
 def addone(record_id):
 
-    conn = sqlite3.connect('item_booktestcode.db')
+    conn = sqlite3.connect('item_book.db')
     c = conn.cursor()
 
     c.execute("UPDATE addresses SET mycount=mycount + 1 WHERE oid = :oid", {'oid': record_id})
@@ -83,7 +83,7 @@ def addone(record_id):
 #function for subtracting 1 to the database value and redrawing the value on screen
 def subone(record_id):
 
-    conn = sqlite3.connect('item_booktestcode.db')
+    conn = sqlite3.connect('item_book.db')
     c = conn.cursor()
 
     c.execute("UPDATE addresses SET mycount=mycount - 1 WHERE oid = :oid", {'oid': record_id})
