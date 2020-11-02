@@ -5,7 +5,10 @@ loot = ["Paracord", "Corrugated Hose", "Malboro cigarettes", "Wilston cigarettes
         "5l propane tank", "Fuel Conditioner", "Heat-exchange alkali surface washer", "Rechargeable battery", "Secure flash drive", "42nd signature blend english tea",
         "Golden rooster", "Roler submariner gold wrist watch", "Battered antique book", "Fireklean gun lube", "Old firesteel", "Deadlyslob's beard oil", "Golden 1gphone",
         "6-sten-140-m military battery", "Ofz 30x160mm shell", "KEKtape duct tape", "Raven figurine", "Ripstop cloth", "Aramid fiber cloth", "Fleece cloth",
-        "Polyamide fabric Cordura", "Can of dr. lupo's coffee beans", "Veritas guitar pick" ]
+        "Polyamide fabric Cordura", "Can of dr. lupo's coffee beans", "Veritas guitar pick", "Morphine injector", "Can of beef stew", "Bars A-2607- 95x18",
+        "Lower half-mask", "Respirator", "BlackRock chest rig", "Wartech gear rig", "Pilgrim tourist backpack", "TT pistol 7.62x25 TT Gold",
+        "Maska 1Sch helmet", "Shturman key", "CMS kit", "Jar of DevilDog mayo", "Can of sprats", "Fake mustache", "Kotton beanie", "Pestily plague mask",
+        "Shroud half-mask", "Antique axe", "M.U.L.E. stimulator", 'Cocktail "Obdolbos"', "Meldonin", "AHF1-M", "P22", "L1 (Norepinephrine)", "3-(b-TG)"]
 
 
 ['42nd signature blend english tea', '5l propane tank', '6-sten-140-m military battery', 'Antique teapot', 'Antique vase', 'Aramid fiber cloth', 'Battered antique book', 'Broken gphone', 'Bronze Lion', 'CPU fan', "Can of dr. lupo's coffee beans", 'Capacitors', 'Car battery', 'Cat figurine', 'Clin wiper', 'Corrugated Hose', "Deadlyslob's beard oil", 'Fireklean gun lube', 'Fleece cloth', 'Fuel Conditioner', 'Gas analyzer', 'Golden 1gphone', 'Golden rooster', 'Graphics card', 'Heat-exchange alkali surface washer', 'Horse figurine', 'KEKtape duct tape', 'Malboro cigarettes', 'Medical bloodset', 'Military COFDM wireless signal transmitter', 'Ofz 30x160mm shell', 'Old firesteel', 'Ox bleach', 'PC CPU', 'Paracord', 'Polyamide fabric Cordura', 'Portable defibrillator', 'Powercord', 'Printed circuit board', 'Raven figurine', 'Rechargeable battery', 'Ripstop cloth', 'Roler submariner gold wrist watch', 'Secure flash drive', 'Silver badge', 'Spark plug', 'Strike cigarettes', 'T-Shaped plug', 'Uhf RFID reader', 'VPX flash storage module', 'Veritas guitar pick', 'Virtex programmable processor', 'Wd-40 100ml', 'Wilston cigarettes', 'Wires']
@@ -66,10 +69,29 @@ loot2 = ["Paracord",
 "Can_of_dr_lupos_coffee_beans",
 "Veritas_guitar_pick",]
 
-loot2.sort()
-print(loot2)
+loot = ['3-(b-TG)', '42nd signature blend english tea', '5l propane tank', '6-sten-140-m military battery', 'AHF1-M', 'Antique axe', 'Antique teapot', 'Antique vase', 'Aramid fiber cloth', 'Bars A-2607- 95x18', 'Battered antique book', 'BlackRock chest rig', 'Broken gphone', 'Bronze Lion', 'CMS kit', 'CPU fan', 'Can of beef stew', "Can of dr. lupo's coffee beans", 'Can of sprats', 'Capacitors', 'Car battery', 'Cat figurine', 'Clin wiper', 'Cocktail "Obdolbos"', 'Corrugated Hose', "Deadlyslob's beard oil", 'Fake mustache', 'Fireklean gun lube', 'Fleece cloth', 'Fuel Conditioner', 'Gas analyzer', 'Golden 1gphone', 'Golden rooster', 'Graphics card', 'Heat-exchange alkali surface washer', 'Horse figurine', 'Jar of DevilDog mayo', 'KEKtape duct tape', 'Kotton beanie', 'L1 (Norepinephrine)', 'Lower half-mask', 'M.U.L.E. stimulator', 'Malboro cigarettes', 'Maska 1Sch helmet', 'Medical bloodset', 'Meldonin', 'Military COFDM wireless signal transmitter', 'Morphine injector', 'Ofz 30x160mm shell', 'Old firesteel', 'Ox bleach', 'P22', 'PC CPU', 'Paracord', 'Pestily plague mask', 'Pilgrim tourist backpack', 'Polyamide fabric Cordura', 'Portable defibrillator', 'Powercord', 'Printed circuit board', 'Raven figurine', 'Rechargeable battery', 'Respirator', 'Ripstop cloth', 'Roler submariner gold wrist watch', 'Secure flash drive', 'Shroud half-mask', 'Shturman key', 'Silver badge', 'Spark plug', 'Strike cigarettes', 'T-Shaped plug', 'TT pistol 7.62x25 TT Gold', 'Uhf RFID reader', 'VPX flash storage module', 'Veritas guitar pick', 'Virtex programmable processor', 'Wartech gear rig', 'Wd-40 100ml', 'Wilston cigarettes', 'Wires']
 
-['Fortysecond_signature_blend_english_tea', 'Fivel_propane_tank', 'Sixsten140m_military_battery', 'Antique_teapot', 'Antique_vase', 'Aramid_fiber_cloth', 'Battered_antique_book', 'Broken_gphone', 
+loot3 = ["three_b_TG", 'Fortysecond_signature_blend_english_tea', 'Fivel_propane_tank', 'Sixsten140m_military_battery', 'Antique_teapot', 'Antique_vase', 'Aramid_fiber_cloth', 'Battered_antique_book', 'Broken_gphone',
+'Bronze_Lion', 'CPU_fan', 'Can_of_dr_lupos_coffee_beans', 'Capacitors', 'Car_battery', 'Cat_figurine',
+'Clin_wiper', 'Corrugated_Hose', 'Deadlyslobs_beard_oil', 'Fireklean_gun_lube',
+'Fleece_cloth', 'Fuel_Conditioner', 'Gas_analyzer',
+'Golden_1gphone', 'Golden_rooster', 'Graphics_card', 'Heat_exchange_alkali_surface_washer',
+'Horse_figurine', 'KEKtape_duct_tape', 'Malboro_cigarettes', 'Medical_bloodset',
+'Military_COFDM_wireless_signal_transmitter', 'Ofz_30x160mm_shell', 'Old_firesteel',
+'Ox_bleach', 'PC_CPU', 'Paracord', 'Polyamide_fabric_Cordura', 'Portable_defibrillator',
+'Powercord', 'Printed_circuit_board', 'Raven_figurine', 'Rechargeable_battery', 'Ripstop_cloth',
+'Roler_submariner_gold_wrist_watch', 'Secure_flash_drive', 'Silver_badge',
+'Spark_plug', 'Strike_cigarettes', 'TShaped_plug',
+'Uhf_RFID_reader', 'VPX_flash_storage_module', 'Veritas_guitar_pick', 'Virtex_programmable_processor',
+'Wd40_100ml', 'Wilston_cigarettes', 'Wires', "Morphine_injector", "Can_of_beef_stew", "Bars_A_2607_95x18", "Lower_half_mask", "Respirator", "BlackRock_chest_rig", "Wartech_gear_rig",
+"Pilgrim_tourist_backpack", "TT_pistol_7_62x25_TT_Gold", "Maska_1Sch_helmet", "Shturman_key", "CMS_kit", "Jar_of_DevilDog_mayo",
+"Can_of_sprats", "Fake_mustache", "Kotton_beanie", "Pestily_plague_mask", "Shroud_half_mask", "Antique_axe", "MULE_stimulator",
+"Cocktail_obdolbos", "Meldonin", "AHF1_M", "P22", "L1_Norepinephrine"]
+
+loot3.sort()
+print(loot3)
+
+['Fortysecond_signature_blend_english_tea', 'Fivel_propane_tank', 'Sixsten140m_military_battery', 'Antique_teapot', 'Antique_vase', 'Aramid_fiber_cloth', 'Battered_antique_book', 'Broken_gphone',
 'Bronze_Lion', 'CPU_fan', 'Can_of_dr_lupos_coffee_beans', 'Capacitors', 'Car_battery', 'Cat_figurine',
 'Clin_wiper', 'Corrugated_Hose', 'Deadlyslobs_beard_oil', 'Fireklean_gun_lube',
 'Fleece_cloth', 'Fuel_Conditioner', 'Gas_analyzer',

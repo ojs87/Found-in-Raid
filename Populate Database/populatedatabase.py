@@ -66,6 +66,37 @@ Fleece_cloth = Lootinfo(TRUE, 10, 0, 0, 0)
 Polyamide_fabric_Cordura = Lootinfo(TRUE, 10, 0, 0, 0)
 Can_of_dr_lupos_coffee_beans = Lootinfo(TRUE, 1, 0, 0, 0)
 Veritas_guitar_pick = Lootinfo(TRUE, 1, 0, 0, 0)
+Morphine_injector = Lootinfo(TRUE, 4, 4, 0, 0)
+Can_of_beef_stew = Lootinfo(TRUE, 15, 0, 0, 0)
+Bars_A_2607_95x18 = Lootinfo(TRUE, 5, 0, 0, 0)
+Lower_half_mask = Lootinfo(TRUE, 7, 0, 0, 0)
+Respirator = Lootinfo(TRUE, 4, 0, 0, 0)
+BlackRock_chest_rig = Lootinfo(TRUE, 2, 0, 0, 0)
+Wartech_gear_rig = Lootinfo(TRUE, 2, 0, 0, 0)
+Pilgrim_tourist_backpack = Lootinfo(TRUE, 1, 0, 0, 0)
+TT_pistol_7_62x25_TT_Gold = Lootinfo(TRUE, 1, 0, 0, 0)
+Maska_1Sch_helmet = Lootinfo(TRUE, 1, 0, 0, 0)
+Shturman_key = Lootinfo(TRUE, 1, 0, 0, 0)
+CMS_kit = Lootinfo(TRUE, 2, 0, 0, 0)
+Jar_of_DevilDog_mayo = Lootinfo(TRUE, 1, 0, 0, 0)
+Can_of_sprats = Lootinfo(TRUE, 1, 0, 0, 0)
+Fake_mustache = Lootinfo(TRUE, 1, 0, 0, 0)
+Kotton_beanie = Lootinfo(TRUE, 1, 0, 0, 0)
+Pestily_plague_mask = Lootinfo(TRUE, 1, 0, 0, 0)
+Shroud_half_mask = Lootinfo(TRUE, 1, 0, 0, 0)
+Antique_axe = Lootinfo(TRUE, 1, 0, 0, 0)
+MULE_stimulator = Lootinfo(TRUE, 1, 0, 0, 0)
+Cocktail_obdolbos = Lootinfo(TRUE, 1, 0, 0, 0)
+Meldonin = Lootinfo(TRUE, 1, 0, 0, 0)
+AHF1_M = Lootinfo(TRUE, 1, 1, 0, 0)
+P22 = Lootinfo(TRUE, 1, 0, 0, 0)
+L1_Norepinephrine = Lootinfo(TRUE, 1, 0, 0, 0)
+Three_b_TG = Lootinfo(TRUE, 1, 1, 0, 0)
+
+"Morphine_injector", "Can_of_beef_stew", "Bars_A_2607_95x18", "Lower_half_mask", "Respirator", "BlackRock_chest_rig", "Wartech_gear_rig",
+"Pilgrim_tourist_backpack", "TT_pistol_7_62x25_TT_Gold", "Maska_1Sch_helmet", "Shturman_key", "CMS_kit", "Jar_of_DevilDog_mayo",
+"Can_of_sprats", "Fake_mustache", "Kotton_beanie", "Pestily_plague_mask", "Shroud_half_mask", "Antique_axe", "MULE_stimulator",
+"Cocktail_obdolbos", "Meldonin", "AHF1_M", "P22", "L1_Norepinephrine", "three_b_TG"
 
 loot2 = ["Paracord",
 "Corrugated_Hose",
@@ -123,51 +154,53 @@ loot2 = ["Paracord",
 "Can_of_dr_lupos_coffee_beans",
 "Veritas_guitar_pick",]
 
-loot3 = ['Fortysecond_signature_blend_english_tea', 'Fivel_propane_tank', 'Sixsten140m_military_battery', 'Antique_teapot', 'Antique_vase', 'Aramid_fiber_cloth', 'Battered_antique_book', 'Broken_gphone',
-'Bronze_Lion', 'CPU_fan', 'Can_of_dr_lupos_coffee_beans', 'Capacitors', 'Car_battery', 'Cat_figurine',
-'Clin_wiper', 'Corrugated_Hose', 'Deadlyslobs_beard_oil', 'Fireklean_gun_lube',
-'Fleece_cloth', 'Fuel_Conditioner', 'Gas_analyzer',
-'Golden_1gphone', 'Golden_rooster', 'Graphics_card', 'Heat_exchange_alkali_surface_washer',
-'Horse_figurine', 'KEKtape_duct_tape', 'Malboro_cigarettes', 'Medical_bloodset',
-'Military_COFDM_wireless_signal_transmitter', 'Ofz_30x160mm_shell', 'Old_firesteel',
-'Ox_bleach', 'PC_CPU', 'Paracord', 'Polyamide_fabric_Cordura', 'Portable_defibrillator',
-'Powercord', 'Printed_circuit_board', 'Raven_figurine', 'Rechargeable_battery', 'Ripstop_cloth',
-'Roler_submariner_gold_wrist_watch', 'Secure_flash_drive', 'Silver_badge',
-'Spark_plug', 'Strike_cigarettes', 'TShaped_plug',
-'Uhf_RFID_reader', 'VPX_flash_storage_module', 'Veritas_guitar_pick', 'Virtex_programmable_processor',
-'Wd40_100ml', 'Wilston_cigarettes', 'Wires']
+
+
+loot3 = ['Three_b_TG', 'Fortysecond_signature_blend_english_tea', 'Fivel_propane_tank', 'Sixsten140m_military_battery', 'AHF1_M', 'Antique_axe', 'Antique_teapot', 'Antique_vase', 'Aramid_fiber_cloth', 'Bars_A_2607_95x18', 'Battered_antique_book', 'BlackRock_chest_rig', 'Broken_gphone', 'Bronze_Lion', 'CMS_kit', 'CPU_fan', 'Can_of_beef_stew', 'Can_of_dr_lupos_coffee_beans', 'Can_of_sprats', 'Capacitors', 'Car_battery', 'Cat_figurine', 'Clin_wiper', 'Cocktail_obdolbos', 'Corrugated_Hose', 'Deadlyslobs_beard_oil', 'Fake_mustache', 'Fireklean_gun_lube', 'Fleece_cloth', 'Fuel_Conditioner', 'Gas_analyzer', 'Golden_1gphone', 'Golden_rooster', 'Graphics_card', 'Heat_exchange_alkali_surface_washer', 'Horse_figurine', 'Jar_of_DevilDog_mayo', 'KEKtape_duct_tape', 'Kotton_beanie', 'L1_Norepinephrine', 'Lower_half_mask', 'MULE_stimulator', 'Malboro_cigarettes', 'Maska_1Sch_helmet', 'Medical_bloodset', 'Meldonin', 'Military_COFDM_wireless_signal_transmitter', 'Morphine_injector', 'Ofz_30x160mm_shell', 'Old_firesteel', 'Ox_bleach', 'P22', 'PC_CPU', 'Paracord', 'Pestily_plague_mask', 'Pilgrim_tourist_backpack', 'Polyamide_fabric_Cordura', 'Portable_defibrillator', 'Powercord', 'Printed_circuit_board', 'Raven_figurine', 'Rechargeable_battery', 'Respirator', 'Ripstop_cloth', 'Roler_submariner_gold_wrist_watch', 'Secure_flash_drive', 'Shroud_half_mask', 'Shturman_key', 'Silver_badge', 'Spark_plug', 'Strike_cigarettes', 'TShaped_plug', 'TT_pistol_7_62x25_TT_Gold', 'Uhf_RFID_reader', 'VPX_flash_storage_module', 'Veritas_guitar_pick', 'Virtex_programmable_processor', 'Wartech_gear_rig', 'Wd40_100ml', 'Wilston_cigarettes', 'Wires']
+
 #Create a database or connect to one
-conn = sqlite3.connect('item_booktestcode.db')
+conn = sqlite3.connect('item_book2.db')
 
 #create cursor
 c = conn.cursor()
 x=0
-while x < len(loot3):
-    testname = loot3[x]
-    c.execute("INSERT INTO addresses VALUES(:name, :fir_status, :quest1, :quest2, :hideout, :mycount)",
-     {
-            'name': loot3[x],
-            'fir_status': eval(loot3[x]).fir_status,
-            'quest1' : eval(loot3[x]).quest1,
-            'quest2' : eval(loot3[x]).quest2,
-            'hideout' : eval(loot3[x]).hideout,
-            'mycount' : eval(loot3[x]).mycount
-    })
-    x += 1
+#populate the database
+def populateDatabase():
+    x=0
+    while x < len(loot3):
+        testname = loot3[x]
+        c.execute("INSERT INTO fir_items VALUES(:name, :fir_status, :quest1, :quest2, :hideout, :mycount)",
+         {
+                'name': loot3[x],
+                'fir_status': eval(loot3[x]).fir_status,
+                'quest1' : eval(loot3[x]).quest1,
+                'quest2' : eval(loot3[x]).quest2,
+                'hideout' : eval(loot3[x]).hideout,
+                'mycount' : eval(loot3[x]).mycount
+        })
+        x += 1
 
-# c.execute("""CREATE TABLE addresses (
-#         name text,
-#         fir_status boolean,
-#         quest1 integer,
-#         quest2 integer,
-#         hideout integer,
-#         mycount integer
-# )""")
-c.execute("SELECT *, oid FROM addresses")
+#Create the database tables
+def createDatabase():
+
+    c.execute("""CREATE TABLE fir_items (
+            name text,
+            fir_status boolean,
+            quest1 integer,
+            quest2 integer,
+            hideout integer,
+            mycount integer
+    )""")
+
+#run the code, either popluate or create
+#createDatabase()
+populateDatabase()
+
+#check the database
+c.execute("SELECT *, oid FROM fir_items")
 records = c.fetchall()
 print(records)
 #commit changes
 conn.commit()
-
 #close connection
 conn.close()
