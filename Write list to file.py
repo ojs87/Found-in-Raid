@@ -135,72 +135,55 @@ loot3 = [
     ("Veritas_guitar_pick", "Veritas guitar pick")
     ]
 
-items_file = open("Items.txt", "a")
+# items_file = open("Items.txt", "a")
 loot2.sort()
 loot.sort()
-#writing the grid positions for the button widgets below
-#while x < len(loot)-1:
-#    items_file.write(loot2[x] + 'button.grid(row=' + str(int(x/2)) + ', column=0)\n')
-#    x += 1
-#    items_file.write(loot2[x] + 'button.grid(row=' + str(int((x-1)/2)) + ', column=4)\n')
-#    x += 1
+print(loot4)
+print(loot)
 
-#items_file.write(loot2[x] + 'button.grid(row=' + str(int(x/2)) + ', column=0)\n')
-
-#writing the button widgets to Items.txt
-#while x < len(loot)-1:
-#    items_file.write(loot2[x] + 'button = Button(mainFrame, text="' + loot[x] + '", width=35, padx=5, command=lambda:newwindow(' + loot2[x] + '))\n')
-#    x += 1
-x=0
-while x<len(loot):
-    items_file.write(loot4[x] + 'label = Label(root, text="' + loot[x] + '", width=35)\n')
-    x += 1
-
-x=0
-while x<len(loot)/2:
-    items_file.write(loot4[x] + 'label.grid(row=' + str(x) + ', column=0)\n')
-    x += 1
-
-while x<len(loot):
-    items_file.write(loot4[x] + 'label.grid(row=' + str(x-28) + ', column=4)\n')
-    x += 1
-
-#items_file.write(loot4[x] + 'label.grid(row=' + str(x-28) + ', column=4)\n')
-
-x=0
-while x<len(loot):
-    items_file.write(loot4[x] + 'buttonAdd = Button(root, text="+", command=lambda:addone(' + str(x + 1) + '), width = 4)\n')
-    x += 1
-
-x=0
-while x<len(loot)/2:
-    items_file.write(loot4[x] + 'buttonAdd.grid(row=' + str(x) + ', column=3)\n')
-    x += 1
-
-while x<len(loot):
-    items_file.write(loot4[x] + 'buttonAdd.grid(row=' + str(x-28) + ', column=7)\n')
-    x += 1
-
-#items_file.write(loot4[x] + 'buttonAdd.grid(row=' + str(int(x/2)) + ', column=3)\n')
-
-x=0
-while x<len(loot):
-    items_file.write(loot4[x] + 'buttonSubtract = Button(root, text="-", command=lambda:subone(' + str(x + 1) + '), width = 4)\n')
-    x += 1
-
-x=0
-while x<len(loot)/2:
-    items_file.write(loot4[x] + 'buttonSubtract.grid(row=' + str(x) + ', column=1)\n')
-    x += 1
-
-while x<len(loot):
-    items_file.write(loot4[x] + 'buttonSubtract.grid(row=' + str(x-28) + ', column=5)\n')
-    x += 1
-
-#items_file.write(loot4[x] + 'buttonSubtract.grid(row=' + str(int(x/2)) + ', column=1)\n')
-
-#while x<len(loot):
-#    items_file.write('\n    ("' + loot2[x] + '", "' + loot[x] + '"),')
-#    x += 1
-
-items_file.close()
+# x=0
+# while x<len(loot):
+#     items_file.write(loot4[x] + 'label = Label(root, text="' + loot[x] + '", width=35)\n')
+#     x += 1
+#
+# x=0
+# while x<len(loot)/2:
+#     items_file.write(loot4[x] + 'label.grid(row=' + str(x) + ', column=0)\n')
+#     x += 1
+#
+# while x<len(loot):
+#     items_file.write(loot4[x] + 'label.grid(row=' + str(x-28) + ', column=4)\n')
+#     x += 1
+#
+# #items_file.write(loot4[x] + 'label.grid(row=' + str(x-28) + ', column=4)\n')
+#
+# x=0
+# while x<len(loot):
+#     items_file.write(loot4[x] + 'buttonAdd = Button(root, text="+", command=lambda:addone(' + str(x + 1) + '), width = 4)\n')
+#     x += 1
+#
+# x=0
+# while x<len(loot)/2:
+#     items_file.write(loot4[x] + 'buttonAdd.grid(row=' + str(x) + ', column=3)\n')
+#     x += 1
+#
+# while x<len(loot):
+#     items_file.write(loot4[x] + 'buttonAdd.grid(row=' + str(x-28) + ', column=7)\n')
+#     x += 1
+#
+#
+# x=0
+# while x<len(loot):
+#     items_file.write(loot4[x] + 'buttonSubtract = Button(root, text="-", command=lambda:subone(' + str(x + 1) + '), width = 4)\n')
+#     x += 1
+#
+# x=0
+# while x<len(loot)/2:
+#     items_file.write(loot4[x] + 'buttonSubtract.grid(row=' + str(x) + ', column=1)\n')
+#     x += 1
+#
+# while x<len(loot):
+#     items_file.write(loot4[x] + 'buttonSubtract.grid(row=' + str(x-28) + ', column=5)\n')
+#     x += 1
+#
+# items_file.close()
