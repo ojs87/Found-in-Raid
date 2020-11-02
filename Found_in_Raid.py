@@ -3,15 +3,16 @@
 #importing the GUI library
 from tkinter import *
 from Itemclass import Lootinfo
+import sqlite3
 
 #Creating the list of loot items
-loot = ["Paracord", "Corrugated hose", "Malboro cigarettes", "Wilston cigarettes", "Strike cigarettes", "Horse figurine", "Cat figurine", "Bronze Lion", 
-        "Gas analyzer", "Military COFDM wireless signal transmitter", "Uhf RFID reader", "VPX flash storage module", "Virtex programmable processor", 
-        "Capacitors", "Wires", "Wd-40 100ml", "Car battery", "Spark plug", "Broken gphone", "CPU fan", "PC CPU", "Printed circuit board", "Graphics card", 
-        "Powercord", "T-Shaped plug", "Antique vase", "Antique teapot", "Silver badge", "Clin wiper", "Portable defibrillator", "Medical bloodset", "Ox bleach", 
-        "5l propane tank", "Fuel Conditioner", "Heat-exchange alkali surface washer", "Rechargeable battery", "Secure flash drive", "42nd signature blend english tea", 
-        "Golden rooster", "Roler submariner gold wrist watch", "Battered antique book", "Fireklean gun lube", "Old firesteel", "Deadlyslob's beard oil", "Golden 1gphone", 
-        "6-sten-140-m military battery", "Ofz 30x160mm shell", "KEKtape duct tape", "Raven figurine", "Ripstop cloth", "Aramid fiber cloth", "Fleece cloth", 
+loot = ["Paracord", "Corrugated hose", "Malboro cigarettes", "Wilston cigarettes", "Strike cigarettes", "Horse figurine", "Cat figurine", "Bronze Lion",
+        "Gas analyzer", "Military COFDM wireless signal transmitter", "Uhf RFID reader", "VPX flash storage module", "Virtex programmable processor",
+        "Capacitors", "Wires", "Wd-40 100ml", "Car battery", "Spark plug", "Broken gphone", "CPU fan", "PC CPU", "Printed circuit board", "Graphics card",
+        "Powercord", "T-Shaped plug", "Antique vase", "Antique teapot", "Silver badge", "Clin wiper", "Portable defibrillator", "Medical bloodset", "Ox bleach",
+        "5l propane tank", "Fuel Conditioner", "Heat-exchange alkali surface washer", "Rechargeable battery", "Secure flash drive", "42nd signature blend english tea",
+        "Golden rooster", "Roler submariner gold wrist watch", "Battered antique book", "Fireklean gun lube", "Old firesteel", "Deadlyslob's beard oil", "Golden 1gphone",
+        "6-sten-140-m military battery", "Ofz 30x160mm shell", "KEKtape duct tape", "Raven figurine", "Ripstop cloth", "Aramid fiber cloth", "Fleece cloth",
         "Polyamide fabric Cordura", "Can of dr. lupo's coffee beans", "Veritas guitar pick" ]
 
 #creating loot objects from Lootinfo class
@@ -23,7 +24,7 @@ Strike_cigarettes = Lootinfo(TRUE, "5", "0", "0", 0)
 Horse_figurine = Lootinfo(TRUE, "2", "0", "0", 0)
 Cat_figurine = Lootinfo(TRUE, "1", "0", "0", 0)
 Bronze_Lion = Lootinfo(TRUE, "2", "0", "4", 0)
-Gas_analyzer = Lootinfo(TRUE, "2", "0", "3", "1")
+Gas_analyzer = Lootinfo(TRUE, "2", "0", "3", 1)
 Military_COFDM_wireless_signal_transmitter = Lootinfo(TRUE, "1", "0", "2", 0)
 Uhf_RFID_reader = Lootinfo(TRUE, "1", "0", "0", 0)
 VPX_flash_storage_module = Lootinfo(TRUE, "1", "0", "2", 0)
@@ -74,6 +75,30 @@ Veritas_guitar_pick = Lootinfo(TRUE, "1", "0", "0", 0)
 root = Tk()
 root.title('List of Items That Need Found in Raid Status')
 
+#Create a database or connect to one
+conn = sqlite3.connect('item_book.db')
+
+#create cursor
+c = conn.cursor()
+
+#create table
+
+# c.execute("""CREATE TABLE addresses (
+#         name text,
+#         quest1 integer,
+#         quest2 integer,
+#         hideout integer,
+#         mycount integer
+# )""")
+
+
+
+#commit changes
+conn.commit()
+
+#close connection
+conn.close()
+
 # Creating a Frame for the listed items
 mainFrame = LabelFrame(root)
 mainFrame.grid(row=0, column=0, columnspan=8, padx = 5, pady = 5)
@@ -85,10 +110,74 @@ def newwindow(listitem):
     howmanyitems.grid(row=27, column=4)
 
 def addtoclass(listitem):
-    return
+    # newvalue = listitem.mycount + 1
+    # bothquests = int(listitem.quest1) + int(listitem.quest2)
+    # #outofhowmany = str(newvalue + "/" + bothquests)
+    # howmanyitems = Label(mainFrame, text=str(newvalue) + "/" + str(bothquests))
+    # howmanyitems.grid(row=27, column=4)
+
+    #Create a database or connect to one
+    conn = sqlite3.connect('item_book.db')
+
+    #create cursor
+    c = conn.cursor()
+    record_id = listitem + 1
+
+
+    c.execute("""UPDATE addresses SET
+        mycount = mycount + 1
+        WHERE oid = :oid""",
+        {
+        'oid': record_id
+        })
+
+    c.execute("SELECT *, oid FROM addresses WHERE oid = :oid",{'oid': record_id})
+    records = c.fetchall()
+
+
+    testlabel = Label(mainFrame, text=records[0][5], width=35)
+    testlabel.grid(row=27, column=4)
+
+
+
+    #commit changes
+    conn.commit()
+
+    #close connection
+    conn.close()
+
 
 def subtractfromclass(listitem):
-    return
+    conn = sqlite3.connect('item_book.db')
+
+    #create cursor
+    c = conn.cursor()
+    record_id = listitem + 1
+
+
+    c.execute("""UPDATE addresses SET
+        mycount = mycount - 1
+        WHERE oid = :oid""",
+        {
+        'oid': record_id
+        })
+
+    c.execute("SELECT *, oid FROM addresses WHERE oid = :oid",{'oid': record_id})
+    records = c.fetchall()
+
+    if records[0][5] == -1:
+        return
+
+    testlabel = Label(mainFrame, text=records[0][5], width=35)
+    testlabel.grid(row=27, column=4)
+
+
+
+    #commit changes
+    conn.commit()
+
+    #close connection
+    conn.close()
 
 # Creating a Button Widget for each loot item
 #while x<len(loot)-1:
@@ -214,118 +303,118 @@ Can_of_dr_lupos_coffee_beansbutton.grid(row=26, column=4)
 Veritas_guitar_pickbutton.grid(row=27, column=0)
 
 #Creating add buttons
-ParacordbuttonAdd = Button(mainFrame, text="+", command=lambda:addtoclass(Paracord))
-Corrugated_HosebuttonAdd = Button(mainFrame, text="+", command=lambda:addtoclass(Corrugated_Hose))
-Malboro_cigarettesbuttonAdd = Button(mainFrame, text="+", command=lambda:addtoclass(Malboro_cigarettes))
-Wilston_cigarettesbuttonAdd = Button(mainFrame, text="+", command=lambda:addtoclass(Wilston_cigarettes))
-Strike_cigarettesbuttonAdd = Button(mainFrame, text="+", command=lambda:addtoclass(Strike_cigarettes))
-Horse_figurinebuttonAdd = Button(mainFrame, text="+", command=lambda:addtoclass(Horse_figurine))
-Cat_figurinebuttonAdd = Button(mainFrame, text="+", command=lambda:addtoclass(Cat_figurine))
-Bronze_LionbuttonAdd = Button(mainFrame, text="+", command=lambda:addtoclass(Bronze_Lion))
-Gas_analyzerbuttonAdd = Button(mainFrame, text="+", command=lambda:addtoclass(Gas_analyzer))
-Military_COFDM_wireless_signal_transmitterbuttonAdd = Button(mainFrame, text="+", command=lambda:addtoclass(Military_COFDM_wireless_signal_transmitter))
-Uhf_RFID_readerbuttonAdd = Button(mainFrame, text="+", command=lambda:addtoclass(Uhf_RFID_reader))
-VPX_flash_storage_modulebuttonAdd = Button(mainFrame, text="+", command=lambda:addtoclass(VPX_flash_storage_module))
-Virtex_programmable_processorbuttonAdd = Button(mainFrame, text="+", command=lambda:addtoclass(Virtex_programmable_processor))
-CapacitorsbuttonAdd = Button(mainFrame, text="+", command=lambda:addtoclass(Capacitors))
-WiresbuttonAdd = Button(mainFrame, text="+", command=lambda:addtoclass(Wires))
-Wd40_100mlbuttonAdd = Button(mainFrame, text="+", command=lambda:addtoclass(Wd40_100ml))
-Car_batterybuttonAdd = Button(mainFrame, text="+", command=lambda:addtoclass(Car_battery))
-Spark_plugbuttonAdd = Button(mainFrame, text="+", command=lambda:addtoclass(Spark_plug))
-Broken_gphonebuttonAdd = Button(mainFrame, text="+", command=lambda:addtoclass(Broken_gphone))
-CPU_fanbuttonAdd = Button(mainFrame, text="+", command=lambda:addtoclass(CPU_fan))
-PC_CPUbuttonAdd = Button(mainFrame, text="+", command=lambda:addtoclass(PC_CPU))
-Printed_circuit_boardbuttonAdd = Button(mainFrame, text="+", command=lambda:addtoclass(Printed_circuit_board))
-Graphics_cardbuttonAdd = Button(mainFrame, text="+", command=lambda:addtoclass(Graphics_card))
-PowercordbuttonAdd = Button(mainFrame, text="+", command=lambda:addtoclass(Powercord))
-TShaped_plugbuttonAdd = Button(mainFrame, text="+", command=lambda:addtoclass(TShaped_plug))
-Antique_vasebuttonAdd = Button(mainFrame, text="+", command=lambda:addtoclass(Antique_vase))
-Antique_teapotbuttonAdd = Button(mainFrame, text="+", command=lambda:addtoclass(Antique_teapot))
-Silver_badgebuttonAdd = Button(mainFrame, text="+", command=lambda:addtoclass(Silver_badge))
-Clin_wiperbuttonAdd = Button(mainFrame, text="+", command=lambda:addtoclass(Clin_wiper))
-Portable_defibrillatorbuttonAdd = Button(mainFrame, text="+", command=lambda:addtoclass(Portable_defibrillator))
-Medical_bloodsetbuttonAdd = Button(mainFrame, text="+", command=lambda:addtoclass(Medical_bloodset))
-Ox_bleachbuttonAdd = Button(mainFrame, text="+", command=lambda:addtoclass(Ox_bleach))
-Fivel_propane_tankbuttonAdd = Button(mainFrame, text="+", command=lambda:addtoclass(Fivel_propane_tank))
-Fuel_ConditionerbuttonAdd = Button(mainFrame, text="+", command=lambda:addtoclass(Fuel_Conditioner))
-Heat_exchange_alkali_surface_washerbuttonAdd = Button(mainFrame, text="+", command=lambda:addtoclass(Heat_exchange_alkali_surface_washer))
-Rechargeable_batterybuttonAdd = Button(mainFrame, text="+", command=lambda:addtoclass(Rechargeable_battery))
-Secure_flash_drivebuttonAdd = Button(mainFrame, text="+", command=lambda:addtoclass(Secure_flash_drive))
-Fortysecond_signature_blend_english_teabuttonAdd = Button(mainFrame, text="+", command=lambda:addtoclass(Fortysecond_signature_blend_english_tea))
-Golden_roosterbuttonAdd = Button(mainFrame, text="+", command=lambda:addtoclass(Golden_rooster))
-Roler_submariner_gold_wrist_watchbuttonAdd = Button(mainFrame, text="+", command=lambda:addtoclass(Roler_submariner_gold_wrist_watch))
-Battered_antique_bookbuttonAdd = Button(mainFrame, text="+", command=lambda:addtoclass(Battered_antique_book))
-Fireklean_gun_lubebuttonAdd = Button(mainFrame, text="+", command=lambda:addtoclass(Fireklean_gun_lube))
-Old_firesteelbuttonAdd = Button(mainFrame, text="+", command=lambda:addtoclass(Old_firesteel))
-Deadlyslobs_beard_oilbuttonAdd = Button(mainFrame, text="+", command=lambda:addtoclass(Deadlyslobs_beard_oil))
-Golden_1gphonebuttonAdd = Button(mainFrame, text="+", command=lambda:addtoclass(Golden_1gphone))
-sixsten140m_military_batterybuttonAdd = Button(mainFrame, text="+", command=lambda:addtoclass(sixsten140m_military_battery))
-Ofz_30x160mm_shellbuttonAdd = Button(mainFrame, text="+", command=lambda:addtoclass(Ofz_30x160mm_shell))
-KEKtape_duct_tapebuttonAdd = Button(mainFrame, text="+", command=lambda:addtoclass(KEKtape_duct_tape))
-Raven_figurinebuttonAdd = Button(mainFrame, text="+", command=lambda:addtoclass(Raven_figurine))
-Ripstop_clothbuttonAdd = Button(mainFrame, text="+", command=lambda:addtoclass(Ripstop_cloth))
-Aramid_fiber_clothbuttonAdd = Button(mainFrame, text="+", command=lambda:addtoclass(Aramid_fiber_cloth))
-Fleece_clothbuttonAdd = Button(mainFrame, text="+", command=lambda:addtoclass(Fleece_cloth))
-Polyamide_fabric_CordurabuttonAdd = Button(mainFrame, text="+", command=lambda:addtoclass(Polyamide_fabric_Cordura))
-Can_of_dr_lupos_coffee_beansbuttonAdd = Button(mainFrame, text="+", command=lambda:addtoclass(Can_of_dr_lupos_coffee_beans))
-Veritas_guitar_pickbuttonAdd = Button(mainFrame, text="+", command=lambda:addtoclass(Veritas_guitar_pick))
+ParacordbuttonAdd = Button(mainFrame, text="+", command=lambda:addtoclass(0))
+Corrugated_HosebuttonAdd = Button(mainFrame, text="+", command=lambda:addtoclass(1))
+Malboro_cigarettesbuttonAdd = Button(mainFrame, text="+", command=lambda:addtoclass(2))
+Wilston_cigarettesbuttonAdd = Button(mainFrame, text="+", command=lambda:addtoclass(3))
+Strike_cigarettesbuttonAdd = Button(mainFrame, text="+", command=lambda:addtoclass(4))
+Horse_figurinebuttonAdd = Button(mainFrame, text="+", command=lambda:addtoclass(5))
+Cat_figurinebuttonAdd = Button(mainFrame, text="+", command=lambda:addtoclass(6))
+Bronze_LionbuttonAdd = Button(mainFrame, text="+", command=lambda:addtoclass(7))
+Gas_analyzerbuttonAdd = Button(mainFrame, text="+", command=lambda:addtoclass(8))
+Military_COFDM_wireless_signal_transmitterbuttonAdd = Button(mainFrame, text="+", command=lambda:addtoclass(9))
+Uhf_RFID_readerbuttonAdd = Button(mainFrame, text="+", command=lambda:addtoclass(10))
+VPX_flash_storage_modulebuttonAdd = Button(mainFrame, text="+", command=lambda:addtoclass(11))
+Virtex_programmable_processorbuttonAdd = Button(mainFrame, text="+", command=lambda:addtoclass(12))
+CapacitorsbuttonAdd = Button(mainFrame, text="+", command=lambda:addtoclass(13))
+WiresbuttonAdd = Button(mainFrame, text="+", command=lambda:addtoclass(14))
+Wd40_100mlbuttonAdd = Button(mainFrame, text="+", command=lambda:addtoclass(15))
+Car_batterybuttonAdd = Button(mainFrame, text="+", command=lambda:addtoclass(16))
+Spark_plugbuttonAdd = Button(mainFrame, text="+", command=lambda:addtoclass(17))
+Broken_gphonebuttonAdd = Button(mainFrame, text="+", command=lambda:addtoclass(18))
+CPU_fanbuttonAdd = Button(mainFrame, text="+", command=lambda:addtoclass(19))
+PC_CPUbuttonAdd = Button(mainFrame, text="+", command=lambda:addtoclass(20))
+Printed_circuit_boardbuttonAdd = Button(mainFrame, text="+", command=lambda:addtoclass(21))
+Graphics_cardbuttonAdd = Button(mainFrame, text="+", command=lambda:addtoclass(22))
+PowercordbuttonAdd = Button(mainFrame, text="+", command=lambda:addtoclass(23))
+TShaped_plugbuttonAdd = Button(mainFrame, text="+", command=lambda:addtoclass(24))
+Antique_vasebuttonAdd = Button(mainFrame, text="+", command=lambda:addtoclass(25))
+Antique_teapotbuttonAdd = Button(mainFrame, text="+", command=lambda:addtoclass(26))
+Silver_badgebuttonAdd = Button(mainFrame, text="+", command=lambda:addtoclass(27))
+Clin_wiperbuttonAdd = Button(mainFrame, text="+", command=lambda:addtoclass(28))
+Portable_defibrillatorbuttonAdd = Button(mainFrame, text="+", command=lambda:addtoclass(29))
+Medical_bloodsetbuttonAdd = Button(mainFrame, text="+", command=lambda:addtoclass(30))
+Ox_bleachbuttonAdd = Button(mainFrame, text="+", command=lambda:addtoclass(31))
+Fivel_propane_tankbuttonAdd = Button(mainFrame, text="+", command=lambda:addtoclass(32))
+Fuel_ConditionerbuttonAdd = Button(mainFrame, text="+", command=lambda:addtoclass(33))
+Heat_exchange_alkali_surface_washerbuttonAdd = Button(mainFrame, text="+", command=lambda:addtoclass(34))
+Rechargeable_batterybuttonAdd = Button(mainFrame, text="+", command=lambda:addtoclass(35))
+Secure_flash_drivebuttonAdd = Button(mainFrame, text="+", command=lambda:addtoclass(36))
+Fortysecond_signature_blend_english_teabuttonAdd = Button(mainFrame, text="+", command=lambda:addtoclass(37))
+Golden_roosterbuttonAdd = Button(mainFrame, text="+", command=lambda:addtoclass(38))
+Roler_submariner_gold_wrist_watchbuttonAdd = Button(mainFrame, text="+", command=lambda:addtoclass(39))
+Battered_antique_bookbuttonAdd = Button(mainFrame, text="+", command=lambda:addtoclass(40))
+Fireklean_gun_lubebuttonAdd = Button(mainFrame, text="+", command=lambda:addtoclass(41))
+Old_firesteelbuttonAdd = Button(mainFrame, text="+", command=lambda:addtoclass(42))
+Deadlyslobs_beard_oilbuttonAdd = Button(mainFrame, text="+", command=lambda:addtoclass(43))
+Golden_1gphonebuttonAdd = Button(mainFrame, text="+", command=lambda:addtoclass(44))
+sixsten140m_military_batterybuttonAdd = Button(mainFrame, text="+", command=lambda:addtoclass(45))
+Ofz_30x160mm_shellbuttonAdd = Button(mainFrame, text="+", command=lambda:addtoclass(46))
+KEKtape_duct_tapebuttonAdd = Button(mainFrame, text="+", command=lambda:addtoclass(47))
+Raven_figurinebuttonAdd = Button(mainFrame, text="+", command=lambda:addtoclass(48))
+Ripstop_clothbuttonAdd = Button(mainFrame, text="+", command=lambda:addtoclass(49))
+Aramid_fiber_clothbuttonAdd = Button(mainFrame, text="+", command=lambda:addtoclass(50))
+Fleece_clothbuttonAdd = Button(mainFrame, text="+", command=lambda:addtoclass(51))
+Polyamide_fabric_CordurabuttonAdd = Button(mainFrame, text="+", command=lambda:addtoclass(52))
+Can_of_dr_lupos_coffee_beansbuttonAdd = Button(mainFrame, text="+", command=lambda:addtoclass(53))
+Veritas_guitar_pickbuttonAdd = Button(mainFrame, text="+", command=lambda:addtoclass(54))
 
 #creating subract buttons
-ParacordbuttonSubtract = Button(mainFrame, text="-", command=lambda:subtractfromclass(Paracord))
-Corrugated_HosebuttonSubtract = Button(mainFrame, text="-", command=lambda:subtractfromclass(Corrugated_Hose))
-Malboro_cigarettesbuttonSubtract = Button(mainFrame, text="-", command=lambda:subtractfromclass(Malboro_cigarettes))
-Wilston_cigarettesbuttonSubtract = Button(mainFrame, text="-", command=lambda:subtractfromclass(Wilston_cigarettes))
-Strike_cigarettesbuttonSubtract = Button(mainFrame, text="-", command=lambda:subtractfromclass(Strike_cigarettes))
-Horse_figurinebuttonSubtract = Button(mainFrame, text="-", command=lambda:subtractfromclass(Horse_figurine))
-Cat_figurinebuttonSubtract = Button(mainFrame, text="-", command=lambda:subtractfromclass(Cat_figurine))
-Bronze_LionbuttonSubtract = Button(mainFrame, text="-", command=lambda:subtractfromclass(Bronze_Lion))
-Gas_analyzerbuttonSubtract = Button(mainFrame, text="-", command=lambda:subtractfromclass(Gas_analyzer))
-Military_COFDM_wireless_signal_transmitterbuttonSubtract = Button(mainFrame, text="-", command=lambda:subtractfromclass(Military_COFDM_wireless_signal_transmitter))
-Uhf_RFID_readerbuttonSubtract = Button(mainFrame, text="-", command=lambda:subtractfromclass(Uhf_RFID_reader))
-VPX_flash_storage_modulebuttonSubtract = Button(mainFrame, text="-", command=lambda:subtractfromclass(VPX_flash_storage_module))
-Virtex_programmable_processorbuttonSubtract = Button(mainFrame, text="-", command=lambda:subtractfromclass(Virtex_programmable_processor))
-CapacitorsbuttonSubtract = Button(mainFrame, text="-", command=lambda:subtractfromclass(Capacitors))
-WiresbuttonSubtract = Button(mainFrame, text="-", command=lambda:subtractfromclass(Wires))
-Wd40_100mlbuttonSubtract = Button(mainFrame, text="-", command=lambda:subtractfromclass(Wd40_100ml))
-Car_batterybuttonSubtract = Button(mainFrame, text="-", command=lambda:subtractfromclass(Car_battery))
-Spark_plugbuttonSubtract = Button(mainFrame, text="-", command=lambda:subtractfromclass(Spark_plug))
-Broken_gphonebuttonSubtract = Button(mainFrame, text="-", command=lambda:subtractfromclass(Broken_gphone))
-CPU_fanbuttonSubtract = Button(mainFrame, text="-", command=lambda:subtractfromclass(CPU_fan))
-PC_CPUbuttonSubtract = Button(mainFrame, text="-", command=lambda:subtractfromclass(PC_CPU))
-Printed_circuit_boardbuttonSubtract = Button(mainFrame, text="-", command=lambda:subtractfromclass(Printed_circuit_board))
-Graphics_cardbuttonSubtract = Button(mainFrame, text="-", command=lambda:subtractfromclass(Graphics_card))
-PowercordbuttonSubtract = Button(mainFrame, text="-", command=lambda:subtractfromclass(Powercord))
-TShaped_plugbuttonSubtract = Button(mainFrame, text="-", command=lambda:subtractfromclass(TShaped_plug))
-Antique_vasebuttonSubtract = Button(mainFrame, text="-", command=lambda:subtractfromclass(Antique_vase))
-Antique_teapotbuttonSubtract = Button(mainFrame, text="-", command=lambda:subtractfromclass(Antique_teapot))
-Silver_badgebuttonSubtract = Button(mainFrame, text="-", command=lambda:subtractfromclass(Silver_badge))
-Clin_wiperbuttonSubtract = Button(mainFrame, text="-", command=lambda:subtractfromclass(Clin_wiper))
-Portable_defibrillatorbuttonSubtract = Button(mainFrame, text="-", command=lambda:subtractfromclass(Portable_defibrillator))
-Medical_bloodsetbuttonSubtract = Button(mainFrame, text="-", command=lambda:subtractfromclass(Medical_bloodset))
-Ox_bleachbuttonSubtract = Button(mainFrame, text="-", command=lambda:subtractfromclass(Ox_bleach))
-Fivel_propane_tankbuttonSubtract = Button(mainFrame, text="-", command=lambda:subtractfromclass(Fivel_propane_tank))
-Fuel_ConditionerbuttonSubtract = Button(mainFrame, text="-", command=lambda:subtractfromclass(Fuel_Conditioner))
-Heat_exchange_alkali_surface_washerbuttonSubtract = Button(mainFrame, text="-", command=lambda:subtractfromclass(Heat_exchange_alkali_surface_washer))
-Rechargeable_batterybuttonSubtract = Button(mainFrame, text="-", command=lambda:subtractfromclass(Rechargeable_battery))
-Secure_flash_drivebuttonSubtract = Button(mainFrame, text="-", command=lambda:subtractfromclass(Secure_flash_drive))
-Fortysecond_signature_blend_english_teabuttonSubtract = Button(mainFrame, text="-", command=lambda:subtractfromclass(Fortysecond_signature_blend_english_tea))
-Golden_roosterbuttonSubtract = Button(mainFrame, text="-", command=lambda:subtractfromclass(Golden_rooster))
-Roler_submariner_gold_wrist_watchbuttonSubtract = Button(mainFrame, text="-", command=lambda:subtractfromclass(Roler_submariner_gold_wrist_watch))
-Battered_antique_bookbuttonSubtract = Button(mainFrame, text="-", command=lambda:subtractfromclass(Battered_antique_book))
-Fireklean_gun_lubebuttonSubtract = Button(mainFrame, text="-", command=lambda:subtractfromclass(Fireklean_gun_lube))
-Old_firesteelbuttonSubtract = Button(mainFrame, text="-", command=lambda:subtractfromclass(Old_firesteel))
-Deadlyslobs_beard_oilbuttonSubtract = Button(mainFrame, text="-", command=lambda:subtractfromclass(Deadlyslobs_beard_oil))
-Golden_1gphonebuttonSubtract = Button(mainFrame, text="-", command=lambda:subtractfromclass(Golden_1gphone))
-sixsten140m_military_batterybuttonSubtract = Button(mainFrame, text="-", command=lambda:subtractfromclass(sixsten140m_military_battery))
-Ofz_30x160mm_shellbuttonSubtract = Button(mainFrame, text="-", command=lambda:subtractfromclass(Ofz_30x160mm_shell))
-KEKtape_duct_tapebuttonSubtract = Button(mainFrame, text="-", command=lambda:subtractfromclass(KEKtape_duct_tape))
-Raven_figurinebuttonSubtract = Button(mainFrame, text="-", command=lambda:subtractfromclass(Raven_figurine))
-Ripstop_clothbuttonSubtract = Button(mainFrame, text="-", command=lambda:subtractfromclass(Ripstop_cloth))
-Aramid_fiber_clothbuttonSubtract = Button(mainFrame, text="-", command=lambda:subtractfromclass(Aramid_fiber_cloth))
-Fleece_clothbuttonSubtract = Button(mainFrame, text="-", command=lambda:subtractfromclass(Fleece_cloth))
-Polyamide_fabric_CordurabuttonSubtract = Button(mainFrame, text="-", command=lambda:subtractfromclass(Polyamide_fabric_Cordura))
-Can_of_dr_lupos_coffee_beansbuttonSubtract = Button(mainFrame, text="-", command=lambda:subtractfromclass(Can_of_dr_lupos_coffee_beans))
-Veritas_guitar_pickbuttonSubtract = Button(mainFrame, text="-", command=lambda:subtractfromclass(Veritas_guitar_pick))
+ParacordbuttonSubtract = Button(mainFrame, text="-", command=lambda:subtractfromclass(0))
+Corrugated_HosebuttonSubtract = Button(mainFrame, text="-", command=lambda:subtractfromclass(1))
+Malboro_cigarettesbuttonSubtract = Button(mainFrame, text="-", command=lambda:subtractfromclass(2))
+Wilston_cigarettesbuttonSubtract = Button(mainFrame, text="-", command=lambda:subtractfromclass(3))
+Strike_cigarettesbuttonSubtract = Button(mainFrame, text="-", command=lambda:subtractfromclass(4))
+Horse_figurinebuttonSubtract = Button(mainFrame, text="-", command=lambda:subtractfromclass(5))
+Cat_figurinebuttonSubtract = Button(mainFrame, text="-", command=lambda:subtractfromclass(6))
+Bronze_LionbuttonSubtract = Button(mainFrame, text="-", command=lambda:subtractfromclass(7))
+Gas_analyzerbuttonSubtract = Button(mainFrame, text="-", command=lambda:subtractfromclass(8))
+Military_COFDM_wireless_signal_transmitterbuttonSubtract = Button(mainFrame, text="-", command=lambda:subtractfromclass(9))
+Uhf_RFID_readerbuttonSubtract = Button(mainFrame, text="-", command=lambda:subtractfromclass(10))
+VPX_flash_storage_modulebuttonSubtract = Button(mainFrame, text="-", command=lambda:subtractfromclass(11))
+Virtex_programmable_processorbuttonSubtract = Button(mainFrame, text="-", command=lambda:subtractfromclass(12))
+CapacitorsbuttonSubtract = Button(mainFrame, text="-", command=lambda:subtractfromclass(13))
+WiresbuttonSubtract = Button(mainFrame, text="-", command=lambda:subtractfromclass(14))
+Wd40_100mlbuttonSubtract = Button(mainFrame, text="-", command=lambda:subtractfromclass(15))
+Car_batterybuttonSubtract = Button(mainFrame, text="-", command=lambda:subtractfromclass(16))
+Spark_plugbuttonSubtract = Button(mainFrame, text="-", command=lambda:subtractfromclass(17))
+Broken_gphonebuttonSubtract = Button(mainFrame, text="-", command=lambda:subtractfromclass(18))
+CPU_fanbuttonSubtract = Button(mainFrame, text="-", command=lambda:subtractfromclass(19))
+PC_CPUbuttonSubtract = Button(mainFrame, text="-", command=lambda:subtractfromclass(20))
+Printed_circuit_boardbuttonSubtract = Button(mainFrame, text="-", command=lambda:subtractfromclass(21))
+Graphics_cardbuttonSubtract = Button(mainFrame, text="-", command=lambda:subtractfromclass(22))
+PowercordbuttonSubtract = Button(mainFrame, text="-", command=lambda:subtractfromclass(23))
+TShaped_plugbuttonSubtract = Button(mainFrame, text="-", command=lambda:subtractfromclass(24))
+Antique_vasebuttonSubtract = Button(mainFrame, text="-", command=lambda:subtractfromclass(25))
+Antique_teapotbuttonSubtract = Button(mainFrame, text="-", command=lambda:subtractfromclass(26))
+Silver_badgebuttonSubtract = Button(mainFrame, text="-", command=lambda:subtractfromclass(27))
+Clin_wiperbuttonSubtract = Button(mainFrame, text="-", command=lambda:subtractfromclass(28))
+Portable_defibrillatorbuttonSubtract = Button(mainFrame, text="-", command=lambda:subtractfromclass(29))
+Medical_bloodsetbuttonSubtract = Button(mainFrame, text="-", command=lambda:subtractfromclass(30))
+Ox_bleachbuttonSubtract = Button(mainFrame, text="-", command=lambda:subtractfromclass(31))
+Fivel_propane_tankbuttonSubtract = Button(mainFrame, text="-", command=lambda:subtractfromclass(32))
+Fuel_ConditionerbuttonSubtract = Button(mainFrame, text="-", command=lambda:subtractfromclass(33))
+Heat_exchange_alkali_surface_washerbuttonSubtract = Button(mainFrame, text="-", command=lambda:subtractfromclass(34))
+Rechargeable_batterybuttonSubtract = Button(mainFrame, text="-", command=lambda:subtractfromclass(35))
+Secure_flash_drivebuttonSubtract = Button(mainFrame, text="-", command=lambda:subtractfromclass(36))
+Fortysecond_signature_blend_english_teabuttonSubtract = Button(mainFrame, text="-", command=lambda:subtractfromclass(37))
+Golden_roosterbuttonSubtract = Button(mainFrame, text="-", command=lambda:subtractfromclass(38))
+Roler_submariner_gold_wrist_watchbuttonSubtract = Button(mainFrame, text="-", command=lambda:subtractfromclass(39))
+Battered_antique_bookbuttonSubtract = Button(mainFrame, text="-", command=lambda:subtractfromclass(40))
+Fireklean_gun_lubebuttonSubtract = Button(mainFrame, text="-", command=lambda:subtractfromclass(41))
+Old_firesteelbuttonSubtract = Button(mainFrame, text="-", command=lambda:subtractfromclass(42))
+Deadlyslobs_beard_oilbuttonSubtract = Button(mainFrame, text="-", command=lambda:subtractfromclass(43))
+Golden_1gphonebuttonSubtract = Button(mainFrame, text="-", command=lambda:subtractfromclass(44))
+sixsten140m_military_batterybuttonSubtract = Button(mainFrame, text="-", command=lambda:subtractfromclass(45))
+Ofz_30x160mm_shellbuttonSubtract = Button(mainFrame, text="-", command=lambda:subtractfromclass(46))
+KEKtape_duct_tapebuttonSubtract = Button(mainFrame, text="-", command=lambda:subtractfromclass(47))
+Raven_figurinebuttonSubtract = Button(mainFrame, text="-", command=lambda:subtractfromclass(48))
+Ripstop_clothbuttonSubtract = Button(mainFrame, text="-", command=lambda:subtractfromclass(49))
+Aramid_fiber_clothbuttonSubtract = Button(mainFrame, text="-", command=lambda:subtractfromclass(50))
+Fleece_clothbuttonSubtract = Button(mainFrame, text="-", command=lambda:subtractfromclass(51))
+Polyamide_fabric_CordurabuttonSubtract = Button(mainFrame, text="-", command=lambda:subtractfromclass(52))
+Can_of_dr_lupos_coffee_beansbuttonSubtract = Button(mainFrame, text="-", command=lambda:subtractfromclass(53))
+Veritas_guitar_pickbuttonSubtract = Button(mainFrame, text="-", command=lambda:subtractfromclass(54))
 
 
 #grid positions for subtract buttons
